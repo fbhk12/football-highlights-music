@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import NFLFilmsMusicExplorer from './components/nfl-films-music-explorer'
 
 export default function Home() {
   return (
@@ -10,11 +10,7 @@ export default function Home() {
             Explore the iconic music that defined NFL Films' golden era
           </p>
         </div>
-        
-        {/* Placeholder for the music explorer component */}
-        <div className="text-center text-gray-600">
-          Coming soon: Search and browse NFL Films music
-        </div>
+        <NFLFilmsMusicExplorer />
       </div>
     </main>
   )
