@@ -1,6 +1,7 @@
-import Image from 'next/image'
-import NFLFilmsMusicExplorer from './components/nfl-films-music-explorer'
-import ThumbnailGallery from './components/thumbnail-gallery'
+'use client';
+
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   return (
