@@ -30,7 +30,7 @@ export default function Home() {
             <h2 className="text-3xl text-[#1E90FF] font-display" style={{
               textShadow: '1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000'
             }}>
-              "The Greatest Soundtrack Never Assembled!"
+              &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
             </h2>
           </div>
           <NFLFilmsMusicExplorer />
