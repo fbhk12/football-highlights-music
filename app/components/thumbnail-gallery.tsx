@@ -1,6 +1,5 @@
 'use client';
 
-import ThumbnailGallery from './components/thumbnail-gallery.tsx'
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
