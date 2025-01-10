@@ -13,7 +13,16 @@ export default function Home() {
         <Image
           src="/lambeau68.jpg"
           alt="Lambeau Field 1968"
-          fill
+          <div className="fixed inset-0 z-0 w-full h-screen">
+            <Image
+            src="/lambeau68.jpg"
+            alt="Lambeau Field 1968"
+            width={1920}
+            height={1080}
+            className="object-cover object-center opacity-20 w-full h-full"
+            priority={true}
+            />
+</div>
           className="object-cover object-center opacity-20"
           priority={true}
           onError={(e) => {
