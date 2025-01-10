@@ -12,7 +12,7 @@ export default function Home() {
       <div className="fixed inset-0 z-0">
         <Image
           src="/lambeau68.jpg"
-          alt="Vintage NFL Stadium"
+          alt="Lambeau Field 1968"
           fill
           className="object-cover object-center opacity-20"
           priority
