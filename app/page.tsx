@@ -11,14 +11,19 @@ export default function Home() {
       {/* Background image */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="lambeau68.jpg"
+          src="/lambeau68.jpg"
           alt="Lambeau Field 1968"
           fill
           className="object-cover object-center opacity-20"
-          priority
-          quality={100}
-        />
-      </div>
+          priority={true}
+          onError={(e) => {
+            console.error('Error loading image:', e);
+          }}
+        onLoad={() => {
+          console.log('Image loaded successfully');
+        }}
+  />
+</div>
 
       {/* Main content */}
       <main className="relative z-10 min-h-screen bg-transparent">
