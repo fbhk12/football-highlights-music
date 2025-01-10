@@ -9,11 +9,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen pb-32">
       {/* Background image */}
-      <div className="fixed inset-0 z-0">
-        <Image
-          src="/lambeau68.jpg"
-          alt="Lambeau Field 1968"
-          <div className="fixed inset-0 z-0 w-full h-screen">
+       <div className="fixed inset-0 z-0 w-full h-screen">
             <Image
             src="/lambeau68.jpg"
             alt="Lambeau Field 1968"
@@ -22,7 +18,7 @@ export default function Home() {
             className="object-cover object-center opacity-20 w-full h-full"
             priority={true}
             />
-</div>
+      </div>
           className="object-cover object-center opacity-20"
           priority={true}
           onError={(e) => {
@@ -31,8 +27,8 @@ export default function Home() {
         onLoad={() => {
           console.log('Image loaded successfully');
         }}
-  />
-</div>
+        />
+    </div>
 
       {/* Main content */}
       <main className="relative z-10 min-h-screen bg-transparent">
