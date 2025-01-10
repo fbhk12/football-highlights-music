@@ -1,17 +1,9 @@
-export default function Home() {
+export default function TestPage() {
   return (
-    <div 
-      className="min-h-screen relative"
-      style={{
-        backgroundImage: 'url(/lambeau68.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      <div className="relative z-10 bg-white/80"> {/* semi-transparent white overlay */}
-        {/* Rest of your content */}
-      </div>
+    <div>
+      <h1>Test Page</h1>
+      <p>If you see an image below, the file is accessible:</p>
+      <img src="/lambeau68.jpg" alt="Lambeau Field 1968" width="500" />
     </div>
-  )
+  );
 }
