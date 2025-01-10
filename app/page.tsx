@@ -11,7 +11,7 @@ export default function Home() {
       {/* Background image */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="/lambeau68.jpg"
+          src="lambeau68.jpg"
           alt="Lambeau Field 1968"
           fill
           className="object-cover object-center opacity-20"
