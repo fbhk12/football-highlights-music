@@ -11,7 +11,7 @@ export default function Home() {
       {/* Background image */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="/vintage-stadium.jpg"
+          src="/lambeau68.jpg"
           alt="Vintage NFL Stadium"
           fill
           className="object-cover object-center opacity-20"
