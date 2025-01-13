@@ -1,21 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.main-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://raw.githubusercontent.com/fbhk12/nfl-films-music/main/public/lambeau68.jpg') center center;
+  background-size: cover;
+  opacity: 0.2;
+  z-index: -1;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
 }
