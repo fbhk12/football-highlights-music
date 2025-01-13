@@ -7,7 +7,7 @@ export default function Home() {
       <div 
         className="fixed inset-0 opacity-20 -z-10"
         style={{
-          backgroundImage: "url('/lambeau68.jpg')",
+          backgroundImage: "url('lambeau68.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
