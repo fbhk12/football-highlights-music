@@ -1,9 +1,4 @@
-import { Playfair_Display } from 'next/font/google'
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-display'
-})
+import './globals.css'
 
 export default function RootLayout({
   children,
@@ -11,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable}`}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   )
