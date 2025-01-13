@@ -7,7 +7,6 @@ export default function Home() {
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Background Image Container */}
       <div style={{
         position: 'fixed',
         top: 0,
@@ -19,9 +18,8 @@ export default function Home() {
         backgroundPosition: 'center',
         opacity: 0.2,
         zIndex: -1
-      }} />
+      }}></div>
 
-      {/* Content Container */}
       <div style={{
         position: 'relative',
         zIndex: 1,
