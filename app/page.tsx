@@ -2,31 +2,24 @@
 
 export default function Home() {
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
-      {/* Background Image Container */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-      }}>
-        {/* Regular img tag for background */}
+    <div className="min-h-screen relative">
+      {/* Background Image */}
+      <div className="fixed inset-0">
         <img 
-          src="/Lambeau68-1024x690.jpg"  {/* Make sure this matches exactly */}
-          alt="Lambeau Field 1968"
+          src="/Lambeau68-1024x690.jpg"
+          alt="Lambeau Field Background"
           style={{
+            position: 'absolute',
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            opacity: 0.2,
-            position: 'absolute'
+            opacity: '0.2'
           }}
         />
       </div>
 
       {/* Content */}
-      <div style={{ position: 'relative', zIndex: 1, padding: '2rem' }}>
+      <div className="relative z-10 p-8">
         <h1 style={{ 
           fontSize: '4rem', 
           fontWeight: 'bold',
