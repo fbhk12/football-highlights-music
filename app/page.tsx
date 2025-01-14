@@ -13,13 +13,14 @@ export default function Home() {
       }}>
         {/* Regular img tag for background */}
         <img 
-          src="/Lambeau68-1024x690.jpg"
+          src="/Lambeau68-1024x690.jpg"  {/* Make sure this matches exactly */}
           alt="Lambeau Field 1968"
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             opacity: 0.2,
+            position: 'absolute'
           }}
         />
       </div>
