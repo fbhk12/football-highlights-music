@@ -3,13 +3,19 @@
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      {/* Background Image */}
-      <div className="fixed inset-0">
+      {/* Background Image - lowest z-index */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 1
+      }}>
         <img 
           src="/Lambeau68-1024x690.jpg"
           alt="Lambeau Field Background"
           style={{
-            position: 'absolute',
             width: '100%',
             height: '100%',
             objectFit: 'cover'
@@ -17,17 +23,23 @@ export default function Home() {
         />
       </div>
 
-      {/* Semi-transparent overlay to help text readability */}
-      <div 
-        className="fixed inset-0"
-        style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',  // Black overlay with 50% opacity
-          zIndex: 1
-        }}
-      />
+      {/* Overlay - middle z-index */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        zIndex: 2
+      }} />
 
-      {/* Content */}
-      <div className="relative z-10 p-8">
+      {/* Content - highest z-index */}
+      <div style={{
+        position: 'relative',
+        zIndex: 3,
+        padding: '2rem'
+      }}>
         <h1 style={{ 
           fontSize: '4rem', 
           fontWeight: 'bold',
@@ -39,7 +51,7 @@ export default function Home() {
 
         <h4 style={{ 
           fontSize: '1.25rem',
-          color: 'white',  // Changed to white for better contrast
+          color: 'white',
           margin: '1.5rem 0',
           textAlign: 'center'
         }}>
@@ -49,7 +61,7 @@ export default function Home() {
         <h2 style={{ 
           fontSize: '1.875rem',
           color: '#1E90FF',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',  // Enhanced shadow for better readability
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
           textAlign: 'center'
         }}>
           &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
