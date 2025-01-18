@@ -21,7 +21,7 @@ export default function Home() {
       <div 
         className="fixed inset-0"
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.1)',  // Black overlay with 50% opacity
+          backgroundColor: 'rgba(0, 0, 0, 0.9)',  // Black overlay with 50% opacity
           zIndex: 1
         }}
       />
