@@ -12,10 +12,19 @@ export default function Home() {
             position: 'absolute',
             width: '100%',
             height: '100%',
-            objectFit: 'cover',
-            }}
+            objectFit: 'cover'
+          }}
         />
       </div>
+
+      {/* Semi-transparent overlay to help text readability */}
+      <div 
+        className="fixed inset-0"
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',  // Black overlay with 50% opacity
+          zIndex: 1
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 p-8">
@@ -30,7 +39,7 @@ export default function Home() {
 
         <h4 style={{ 
           fontSize: '1.25rem',
-          color: 'black',
+          color: 'white',  // Changed to white for better contrast
           margin: '1.5rem 0',
           textAlign: 'center'
         }}>
@@ -40,7 +49,7 @@ export default function Home() {
         <h2 style={{ 
           fontSize: '1.875rem',
           color: '#1E90FF',
-          textShadow: '1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',  // Enhanced shadow for better readability
           textAlign: 'center'
         }}>
           &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
