@@ -2,71 +2,46 @@
 
 export default function Home() {
   return (
-    <div className="min-h-screen relative">
-      {/* Background Image - lowest z-index */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 1
+    <main style={{
+      minHeight: '100vh',
+      background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/Lambeau68-1024x690.jpg')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      padding: '2rem',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <h1 style={{ 
+        fontSize: '4rem', 
+        fontWeight: 'bold',
+        color: '#FFD700',
+        marginBottom: '2rem',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
       }}>
-        <img 
-          src="/Lambeau68-1024x690.jpg"
-          alt="Lambeau Field Background"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover'
-          }}
-        />
-      </div>
+        FootballHighlightsMusic.com
+      </h1>
 
-      {/* Overlay - middle z-index */}
-      <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.4)',
-        zIndex: 2
-      }} />
-
-      {/* Content - highest z-index */}
-      <div style={{
-        position: 'relative',
-        zIndex: 3,
-        padding: '2rem'
+      <h4 style={{ 
+        fontSize: '1.25rem',
+        color: 'white',
+        marginBottom: '2rem',
+        maxWidth: '800px',
+        textAlign: 'center',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
       }}>
-        <h1 style={{ 
-          fontSize: '4rem', 
-          fontWeight: 'bold',
-          color: '#FFD700',
-          textAlign: 'center'
-        }}>
-          FootballHighlightsMusic.com
-        </h1>
+        The Songs And Artists That Contributed To The Golden Age (1966-1979) Of Music Used In Football Highlight Films
+      </h4>
 
-        <h4 style={{ 
-          fontSize: '1.25rem',
-          color: 'white',
-          margin: '1.5rem 0',
-          textAlign: 'center'
-        }}>
-          The Songs And Artists That Contributed To The Golden Age (1966-1979) Of Music Used In Football Highlight Films
-        </h4>
-
-        <h2 style={{ 
-          fontSize: '1.875rem',
-          color: '#1E90FF',
-          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-          textAlign: 'center'
-        }}>
-          &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
-        </h2>
-      </div>
-    </div>
+      <h2 style={{ 
+        fontSize: '1.875rem',
+        color: '#1E90FF',
+        textAlign: 'center',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)'
+      }}>
+        &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
+      </h2>
+    </main>
   );
 }
