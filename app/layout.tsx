@@ -1,4 +1,9 @@
-import './globals.css'
+import { Alfa_Slab_One } from 'next/font/google';
+
+const retroFont = Alfa_Slab_One({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 export default function RootLayout({
   children,
@@ -7,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={retroFont.className}>{children}</body>
     </html>
-  )
+  );
 }
