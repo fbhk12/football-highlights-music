@@ -1,8 +1,8 @@
-import { Alfa_Slab_One } from 'next/font/google';
+import { Oswald } from 'next/font/google';
 
-const retroFont = Arial Narrow ({
-  weight: '400',
+const oswald = Oswald({
   subsets: ['latin'],
+  weight: ['700'], // Using bold weight
 });
 
 export default function RootLayout({
@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={retroFont.className}>{children}</body>
+      <body className={oswald.className}>{children}</body>
     </html>
   );
 }
