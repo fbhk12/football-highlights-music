@@ -34,7 +34,6 @@ export default function Home() {
         fontSize: '1.25rem',
         color: 'white',
         marginBottom: '2rem',
-        maxWidth: '800px',
         textAlign: 'center',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)'
       }}>
