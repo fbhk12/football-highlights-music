@@ -19,7 +19,7 @@ export default function Home() {
         color: '#FFD700',
         marginBottom: '2rem',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
-        fontFamily: "'Bebas Neue'"  // Added font-family
+        fontFamily: "'Arial Narrow'"  // Added font-family
       }}>
         FootballHighlightsMusic.com
       </h1>
