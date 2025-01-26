@@ -1,6 +1,6 @@
 import { Alfa_Slab_One } from 'next/font/google';
 
-const retroFont = Alfa_Slab_One({
+const retroFont = Arial Narrow ({
   weight: '400',
   subsets: ['latin'],
 });
