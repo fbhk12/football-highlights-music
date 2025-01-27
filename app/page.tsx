@@ -42,15 +42,18 @@ export default function Home() {
 
       <h2 style={{ 
         fontSize: '2.5rem',
-        color: '#87CEEB',  // Light blue similar to the screenshot
+        color: '#87CEEB',  // Light blue
         fontFamily: "'Righteous', cursive",
         textAlign: 'center',
         textShadow: `
-          -2px -2px 0 #000,  
-           2px -2px 0 #000,
-          -2px  2px 0 #000,
-           2px  2px 0 #000
-        `  // Creates the outline effect
+          -3px -3px 0 #000,  
+           3px -3px 0 #000,
+          -3px  3px 0 #000,
+           3px  3px 0 #000,
+          -3px  0   0 #000,
+           3px  0   0 #000,
+           0   -3px 0 #000,
+           0    3px 0 #000`  // Thicker outline effect
       }}>
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
