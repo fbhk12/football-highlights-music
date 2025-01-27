@@ -13,43 +13,36 @@ export default function Home() {
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-     <h1 style={{ 
+    <h1 style={{ 
         fontWeight: '700',
         color: '#FFD700',
         marginBottom: '32px',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
         fontFamily: "'Oswald', sans-serif",
-        letterSpacing: '1px',
-        lineHeight: '1',
+        fontSize: '64px',
         display: 'flex',
-        alignItems: 'baseline',
+        alignItems: 'center',
         justifyContent: 'center',
-        flexWrap: 'wrap'
+        gap: '4px'
       }}>
         <span style={{ 
-          fontSize: '120px',  // Large size for F
+          transform: 'scale(1.5)',
           display: 'inline-block',
-          lineHeight: '1'
+          transformOrigin: 'center bottom'
         }}>F</span>
+        <span>OOTBALL</span>
         <span style={{ 
-          fontSize: '64px'  // Base size for regular letters
-        }}>OOTBALL</span>
-        <span style={{ 
-          fontSize: '120px',  // Large size for H
+          transform: 'scale(1.5)',
           display: 'inline-block',
-          lineHeight: '1'
+          transformOrigin: 'center bottom'
         }}>H</span>
+        <span>IGHLIGHTS</span>
         <span style={{ 
-          fontSize: '64px'  // Base size for regular letters
-        }}>IGHLIGHTS</span>
-        <span style={{ 
-          fontSize: '120px',  // Large size for M
+          transform: 'scale(1.5)',
           display: 'inline-block',
-          lineHeight: '1'
+          transformOrigin: 'center bottom'
         }}>M</span>
-        <span style={{ 
-          fontSize: '64px'  // Base size for regular letters
-        }}>USIC.COM</span>
+        <span>USIC.COM</span>
       </h1>
 
       <h4 style={{ 
