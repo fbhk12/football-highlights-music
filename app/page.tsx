@@ -13,38 +13,43 @@ export default function Home() {
       alignItems: 'center',
       justifyContent: 'center'
     }}>
-      <h1 style={{ 
-        fontSize: '4rem',  // Base size for regular letters
+     <h1 style={{ 
         fontWeight: '700',
         color: '#FFD700',
-        marginBottom: '2rem',
+        marginBottom: '32px',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
         fontFamily: "'Oswald', sans-serif",
-        letterSpacing: '0.05em',
+        letterSpacing: '1px',
         lineHeight: '1',
-        display: 'flex',  // Added to help with alignment
-        alignItems: 'baseline',  // Align letters at their base
+        display: 'flex',
+        alignItems: 'baseline',
         justifyContent: 'center',
         flexWrap: 'wrap'
       }}>
         <span style={{ 
-          fontSize: '8rem', 
-          lineHeight: '1',
-          display: 'inline-block'
+          fontSize: '120px',  // Large size for F
+          display: 'inline-block',
+          lineHeight: '1'
         }}>F</span>
-        <span>OOTBALL</span>
         <span style={{ 
-          fontSize: '8rem', 
-          lineHeight: '1',
-          display: 'inline-block'
+          fontSize: '64px'  // Base size for regular letters
+        }}>OOTBALL</span>
+        <span style={{ 
+          fontSize: '120px',  // Large size for H
+          display: 'inline-block',
+          lineHeight: '1'
         }}>H</span>
-        <span>IGHLIGHTS</span>
         <span style={{ 
-          fontSize: '8rem', 
-          lineHeight: '1',
-          display: 'inline-block'
+          fontSize: '64px'  // Base size for regular letters
+        }}>IGHLIGHTS</span>
+        <span style={{ 
+          fontSize: '120px',  // Large size for M
+          display: 'inline-block',
+          lineHeight: '1'
         }}>M</span>
-        <span>USIC.COM</span>
+        <span style={{ 
+          fontSize: '64px'  // Base size for regular letters
+        }}>USIC.COM</span>
       </h1>
 
       <h4 style={{ 
