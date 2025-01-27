@@ -22,11 +22,11 @@ export default function Home() {
         letterSpacing: '0.05em',
         lineHeight: '1'
       }}>
-        <span style={{ fontSize: '7rem' }}>F</span>
+        <span style={{ fontSize: '8rem' }}>F</span>
         <span style={{ fontSize: '4rem' }}>OOTBALL</span>
-        <span style={{ fontSize: '7rem' }}>H</span>
+        <span style={{ fontSize: '8rem' }}>H</span>
         <span style={{ fontSize: '4rem' }}>IGHLIGHTS</span>
-        <span style={{ fontSize: '7rem' }}>M</span>
+        <span style={{ fontSize: '8rem' }}>M</span>
         <span style={{ fontSize: '4rem' }}>USIC.COM</span>
       </h1>
 
