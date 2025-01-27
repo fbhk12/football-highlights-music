@@ -46,14 +46,22 @@ export default function Home() {
         fontFamily: "'Righteous', cursive",
         textAlign: 'center',
         textShadow: `
+          -4px -4px 0 #000,  
+           4px -4px 0 #000,
+          -4px  4px 0 #000,
+           4px  4px 0 #000,
+          -4px  0   0 #000,
+           4px  0   0 #000,
+           0   -4px 0 #000,
+           0    4px 0 #000,
           -3px -3px 0 #000,  
            3px -3px 0 #000,
           -3px  3px 0 #000,
            3px  3px 0 #000,
-          -3px  0   0 #000,
-           3px  0   0 #000,
-           0   -3px 0 #000,
-           0    3px 0 #000`  // Thicker outline effect
+          -2px -2px 0 #000,  
+           2px -2px 0 #000,
+          -2px  2px 0 #000,
+           2px  2px 0 #000`  // Multiple layers of shadows for thicker outline
       }}>
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
