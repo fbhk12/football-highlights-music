@@ -14,20 +14,37 @@ export default function Home() {
       justifyContent: 'center'
     }}>
       <h1 style={{ 
+        fontSize: '4rem',  // Base size for regular letters
         fontWeight: '700',
         color: '#FFD700',
         marginBottom: '2rem',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
         fontFamily: "'Oswald', sans-serif",
         letterSpacing: '0.05em',
-        lineHeight: '1'
+        lineHeight: '1',
+        display: 'flex',  // Added to help with alignment
+        alignItems: 'baseline',  // Align letters at their base
+        justifyContent: 'center',
+        flexWrap: 'wrap'
       }}>
-        <span style={{ fontSize: '8rem' }}>F</span>
-        <span style={{ fontSize: '4rem' }}>OOTBALL</span>
-        <span style={{ fontSize: '8rem' }}>H</span>
-        <span style={{ fontSize: '4rem' }}>IGHLIGHTS</span>
-        <span style={{ fontSize: '8rem' }}>M</span>
-        <span style={{ fontSize: '4rem' }}>USIC.COM</span>
+        <span style={{ 
+          fontSize: '8rem', 
+          lineHeight: '1',
+          display: 'inline-block'
+        }}>F</span>
+        <span>OOTBALL</span>
+        <span style={{ 
+          fontSize: '8rem', 
+          lineHeight: '1',
+          display: 'inline-block'
+        }}>H</span>
+        <span>IGHLIGHTS</span>
+        <span style={{ 
+          fontSize: '8rem', 
+          lineHeight: '1',
+          display: 'inline-block'
+        }}>M</span>
+        <span>USIC.COM</span>
       </h1>
 
       <h4 style={{ 
