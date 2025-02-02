@@ -26,35 +26,39 @@ export default function Home() {
         gap: '8px',
         height: '120px'  // Make room for taller letters
       }}>
-        <div style={{ position: 'relative', width: '60px' }}>
-          <span style={{ 
-            position: 'absolute',
-            bottom: '0',
-            fontSize: '120px',
-            lineHeight: '1',
-            fontWeight: '700'
-          }}>F</span>
-        </div>
-        <span>OOTBALL</span>
-        <div style={{ position: 'relative', width: '60px' }}>
-          <span style={{ 
-            position: 'absolute',
-            bottom: '0',
-            fontSize: '120px',
-            lineHeight: '1',
-            fontWeight: '700'
-          }}>H</span>
-        </div>
-        <span>IGHLIGHTS</span>
-        <div style={{ position: 'relative', width: '60px' }}>
-          <span style={{ 
-            position: 'absolute',
-            bottom: '0',
-            fontSize: '120px',
-            lineHeight: '1',
-            fontWeight: '700'
-          }}>M</span>
-        </div>
+        <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'auto auto auto auto auto auto',
+        gap: '4px',
+        justifyContent: 'center',
+        alignItems: 'end',
+        marginBottom: '2rem'
+      }}>
+        <span style={{ 
+          fontSize: '120px',
+          lineHeight: '0.8',
+          color: '#FFD700',
+          fontWeight: '700',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+        }}>F</span>
+        <span style={{ fontSize: '64px', color: '#FFD700' }}>OOTBALL</span>
+        <span style={{ 
+          fontSize: '120px',
+          lineHeight: '0.8',
+          color: '#FFD700',
+          fontWeight: '700',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+        }}>H</span>
+        <span style={{ fontSize: '64px', color: '#FFD700' }}>IGHLIGHTS</span>
+        <span style={{ 
+          fontSize: '120px',
+          lineHeight: '0.8',
+          color: '#FFD700',
+          fontWeight: '700',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+        }}>M</span>
+        <span style={{ fontSize: '64px', color: '#FFD700' }}>USIC.COM</span>
+      </div>
         <span>USIC.COM</span>
       </h1>
 
