@@ -14,7 +14,7 @@ export default function Home() {
       justifyContent: 'center'
     }}>
     <h1 style={{ 
-        fontWeight: '700',
+        position: 'relative',
         color: '#FFD700',
         marginBottom: '32px',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
@@ -23,25 +23,38 @@ export default function Home() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '4px'
+        gap: '8px',
+        height: '120px'  // Make room for taller letters
       }}>
-        <span style={{ 
-          transform: 'scale(1.5)',
-          display: 'inline-block',
-          transformOrigin: 'center bottom'
-        }}>F</span>
+        <div style={{ position: 'relative', width: '60px' }}>
+          <span style={{ 
+            position: 'absolute',
+            bottom: '0',
+            fontSize: '120px',
+            lineHeight: '1',
+            fontWeight: '700'
+          }}>F</span>
+        </div>
         <span>OOTBALL</span>
-        <span style={{ 
-          transform: 'scale(1.5)',
-          display: 'inline-block',
-          transformOrigin: 'center bottom'
-        }}>H</span>
+        <div style={{ position: 'relative', width: '60px' }}>
+          <span style={{ 
+            position: 'absolute',
+            bottom: '0',
+            fontSize: '120px',
+            lineHeight: '1',
+            fontWeight: '700'
+          }}>H</span>
+        </div>
         <span>IGHLIGHTS</span>
-        <span style={{ 
-          transform: 'scale(1.5)',
-          display: 'inline-block',
-          transformOrigin: 'center bottom'
-        }}>M</span>
+        <div style={{ position: 'relative', width: '60px' }}>
+          <span style={{ 
+            position: 'absolute',
+            bottom: '0',
+            fontSize: '120px',
+            lineHeight: '1',
+            fontWeight: '700'
+          }}>M</span>
+        </div>
         <span>USIC.COM</span>
       </h1>
 
