@@ -38,7 +38,7 @@ export default function Home() {
         margin: '0 auto'
       }}>
         <span style={{ 
-          fontSize: '120px',
+          fontSize: '100px',
           lineHeight: '1',
           color: '#FFD700',
           fontWeight: '700',
@@ -51,7 +51,7 @@ export default function Home() {
           lineHeight: '1'
         }}>OOTBALL</span>
         <span style={{ 
-          fontSize: '120px',
+          fontSize: '100px',
           lineHeight: '1',
           color: '#FFD700',
           fontWeight: '700',
@@ -64,7 +64,7 @@ export default function Home() {
           lineHeight: '1'
         }}>IGHLIGHTS</span>
         <span style={{ 
-          fontSize: '120px',
+          fontSize: '100px',
           lineHeight: '1',
           color: '#FFD700',
           fontWeight: '700',
