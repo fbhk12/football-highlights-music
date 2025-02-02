@@ -35,7 +35,7 @@ export default function Home() {
         marginBottom: '2rem'
       }}>
         <span style={{ 
-          fontSize: '120px',
+          fontSize: '100px',
           lineHeight: '0.8',
           color: '#FFD700',
           fontWeight: '700',
@@ -43,7 +43,7 @@ export default function Home() {
         }}>F</span>
         <span style={{ fontSize: '64px', color: '#FFD700' }}>OOTBALL</span>
         <span style={{ 
-          fontSize: '120px',
+          fontSize: '100px',
           lineHeight: '0.8',
           color: '#FFD700',
           fontWeight: '700',
@@ -51,7 +51,7 @@ export default function Home() {
         }}>H</span>
         <span style={{ fontSize: '64px', color: '#FFD700' }}>IGHLIGHTS</span>
         <span style={{ 
-          fontSize: '120px',
+          fontSize: '100px',
           lineHeight: '0.8',
           color: '#FFD700',
           fontWeight: '700',
