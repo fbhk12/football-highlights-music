@@ -26,40 +26,57 @@ export default function Home() {
         gap: '8px',
         height: '120px'  // Make room for taller letters
       }}>
-        <div style={{
+       <div style={{
         display: 'grid',
         gridTemplateColumns: 'auto auto auto auto auto auto',
         gap: '4px',
         justifyContent: 'center',
-        alignItems: 'end',
-        marginBottom: '2rem'
+        alignItems: 'baseline',  // Changed from 'end' to 'baseline' for bottom alignment
+        marginBottom: '2rem',
+        width: '100%',  // Ensure full width for proper centering
+        maxWidth: '1200px',
+        margin: '0 auto'
       }}>
         <span style={{ 
           fontSize: '120px',
-          lineHeight: '0.8',
+          lineHeight: '1',
           color: '#FFD700',
           fontWeight: '700',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+          display: 'inline-block'
         }}>F</span>
-        <span style={{ fontSize: '64px', color: '#FFD700' }}>OOTBALL</span>
+        <span style={{ 
+          fontSize: '64px', 
+          color: '#FFD700',
+          lineHeight: '1'
+        }}>OOTBALL</span>
         <span style={{ 
           fontSize: '120px',
-          lineHeight: '0.8',
+          lineHeight: '1',
           color: '#FFD700',
           fontWeight: '700',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+          display: 'inline-block'
         }}>H</span>
-        <span style={{ fontSize: '64px', color: '#FFD700' }}>IGHLIGHTS</span>
+        <span style={{ 
+          fontSize: '64px', 
+          color: '#FFD700',
+          lineHeight: '1'
+        }}>IGHLIGHTS</span>
         <span style={{ 
           fontSize: '120px',
-          lineHeight: '0.8',
+          lineHeight: '1',
           color: '#FFD700',
           fontWeight: '700',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
+          display: 'inline-block'
         }}>M</span>
-        <span style={{ fontSize: '64px', color: '#FFD700' }}>USIC.COM</span>
+        <span style={{ 
+          fontSize: '64px', 
+          color: '#FFD700',
+          lineHeight: '1'
+        }}>USIC</span>
       </div>
-        <span>USIC.COM</span>
       </h1>
 
       <h4 style={{ 
