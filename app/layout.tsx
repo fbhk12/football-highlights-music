@@ -1,14 +1,9 @@
-import { Oswald, Righteous } from 'next/font/google';
+import { Oswald } from 'next/font/google'
 
 const oswald = Oswald({
   subsets: ['latin'],
-  weight: ['700'],
-});
-
-const righteous = Righteous({
-  weight: '400',
-  subsets: ['latin'],
-});
+  weight: '700'
+})
 
 export default function RootLayout({
   children,
@@ -17,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${oswald.className} ${righteous.variable}`}>{children}</body>
+      <body className={oswald.className}>{children}</body>
     </html>
-  );
+  )
 }
