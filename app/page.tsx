@@ -75,7 +75,7 @@ export default function Home() {
           fontSize: '64px', 
           color: '#FFD700',
           lineHeight: '1'
-        }}>USIC</span>
+        }}>USIC.COM</span>
       </div>
       </h1>
 
