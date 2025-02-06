@@ -1,5 +1,6 @@
 'use client';
 
+import NavLinks from './components/nav-links';
 export default function Home() {
   return (
     <main style={{
