@@ -114,6 +114,7 @@ export default function Home() {
       }}>
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
+      <NavLinks />
     </main>
   );
 }
