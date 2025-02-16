@@ -14,8 +14,8 @@ export default function NavLinks() {
   ];
 
   return (
-    <div className="container mx-auto px-4">
-      <div className="flex flex-row flex-wrap justify-center items-center gap-8">
+    <div className="w-full max-w-7xl mx-auto">
+      <div className="grid grid-cols-8 gap-4">
         {navItems.map((item, index) => (
           <a
             key={index}
