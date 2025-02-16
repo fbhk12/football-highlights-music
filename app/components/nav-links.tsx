@@ -3,12 +3,10 @@ import { Music, Mic2, Disc, Building2, Trophy, Calendar, Film, Video } from 'luc
 
 export default function NavLinks() {
   const navItems = [
-    // Music-related links
     { href: '/songs', icon: Music, label: 'Songs' },
     { href: '/artists', icon: Mic2, label: 'Artists' },
     { href: '/albums', icon: Disc, label: 'Albums' },
     { href: '/labels', icon: Building2, label: 'Record Labels' },
-    // Film-related links
     { href: '/teams', icon: Trophy, label: 'Teams' },
     { href: '/seasons', icon: Calendar, label: 'Seasons' },
     { href: '/specials', icon: Film, label: 'Specials' },
@@ -16,8 +14,8 @@ export default function NavLinks() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto mt-8">
-      <div className="flex justify-center gap-4 px-4">
+    <div className="container mx-auto px-4">
+      <div className="flex flex-row flex-wrap justify-center items-center gap-8">
         {navItems.map((item, index) => (
           <a
             key={index}
