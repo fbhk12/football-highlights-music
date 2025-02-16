@@ -25,7 +25,8 @@ export default function NavLinks() {
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
+        gap: '1.5rem' // Added gap for space between rectangles
       }}>
         {navItems.map((item, index) => (
           <a
@@ -38,23 +39,24 @@ export default function NavLinks() {
               flexDirection: 'column',
               alignItems: 'center',
               backgroundColor: '#FFD700',
-              padding: '1rem',
+              padding: '0.75rem',
               borderRadius: '0.5rem',
-              minWidth: item.label === 'Non-Football Films' ? '140px' : '120px',
-              height: '120px',
+              minWidth: item.label === 'Non-Football Films' ? '120px' : '100px', // Reduced widths
+              height: '110px', // Reduced height
               justifyContent: 'center',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               opacity: 0.9
             }}>
-              <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg mb-2">
-                <item.icon size={24} className="text-white" />
+              <div className="w-14 h-14 bg-blue-900 rounded-full flex items-center justify-center shadow-lg mb-1">
+                <item.icon size={28} className="text-white" /> {/* Increased icon size */}
               </div>
               <span style={{
                 color: '#000',
-                fontSize: '0.875rem',
+                fontSize: '1rem', // Increased font size
                 fontWeight: '600',
                 textAlign: 'center',
-                marginTop: '0.5rem'
+                marginTop: '0.25rem',
+                lineHeight: '1.1' // Tighter line height for better fit
               }}>
                 {item.label}
               </span>
