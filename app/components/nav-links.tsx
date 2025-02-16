@@ -15,7 +15,7 @@ export default function NavLinks() {
 
   return (
     <div className="w-full max-w-[1200px] mx-auto px-4">
-      <div className="flex flex-row justify-between items-center">
+      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '2rem' }}>
         {navItems.map((item, index) => (
           <a
             key={index}
