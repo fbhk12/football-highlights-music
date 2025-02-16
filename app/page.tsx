@@ -115,7 +115,9 @@ export default function Home() {
       }}>
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
-      <NavLinks />
+      <div style={{ width: '100%' }}>
+        <NavLinks />
+      </div>
     </main>
   );
 }
