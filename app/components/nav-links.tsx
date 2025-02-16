@@ -1,3 +1,4 @@
+// nav-links.tsx
 'use client';
 import { Music, Mic2, Disc, Building2, Trophy, Calendar, Film, Video } from 'lucide-react';
 
@@ -14,13 +15,29 @@ export default function NavLinks() {
   ];
 
   return (
-    <div className="w-full max-w-[1200px] mx-auto">
-      <div className="w-full flex flex-row justify-between items-center">
+    <div style={{
+      width: '100%',
+      maxWidth: '1200px',
+      margin: '2rem auto 0',
+      padding: '0 1rem'
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+        alignItems: 'center'
+      }}>
         {navItems.map((item, index) => (
           <a
             key={index}
             href={item.href}
-            className="flex flex-col items-center group hover:transform hover:scale-105 transition-all"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+            className="group hover:transform hover:scale-105 transition-all"
           >
             <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg">
               <item.icon size={24} className="text-blue-900" />
