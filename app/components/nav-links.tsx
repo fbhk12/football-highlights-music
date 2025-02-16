@@ -1,4 +1,3 @@
-// nav-links.tsx
 'use client';
 import { Music, Mic2, Disc, Building2, Trophy, Calendar, Film, Video } from 'lucide-react';
 
@@ -32,19 +31,34 @@ export default function NavLinks() {
           <a
             key={index}
             href={item.href}
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center'
-            }}
             className="group hover:transform hover:scale-105 transition-all"
           >
-            <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg">
-              <item.icon size={24} className="text-blue-900" />
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              backgroundColor: '#FFD700',
+              padding: '1rem',
+              borderRadius: '0.5rem',
+              minWidth: item.label === 'Non-Football Films' ? '140px' : '120px',
+              height: '120px',
+              justifyContent: 'center',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+              opacity: 0.9
+            }}>
+              <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center shadow-lg mb-2">
+                <item.icon size={24} className="text-white" />
+              </div>
+              <span style={{
+                color: '#000',
+                fontSize: '0.875rem',
+                fontWeight: '600',
+                textAlign: 'center',
+                marginTop: '0.5rem'
+              }}>
+                {item.label}
+              </span>
             </div>
-            <span className="mt-1 text-white text-center font-semibold text-sm">
-              {item.label}
-            </span>
           </a>
         ))}
       </div>
