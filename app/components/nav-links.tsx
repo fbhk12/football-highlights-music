@@ -14,21 +14,23 @@ export default function NavLinks() {
   ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', gap: '2rem' }}>
-      {navItems.map((item, index) => (
-        <a
-          key={index}
-          href={item.href}
-          className="flex flex-col items-center group hover:transform hover:scale-105 transition-all"
-        >
-          <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg">
-            <item.icon size={24} className="text-blue-900" />
-          </div>
-          <span className="mt-1 text-white text-center font-semibold text-sm">
-            {item.label}
-          </span>
-        </a>
-      ))}
+    <div className="w-full max-w-[1200px] mx-auto px-4">
+      <div className="flex flex-row justify-between items-center">
+        {navItems.map((item, index) => (
+          <a
+            key={index}
+            href={item.href}
+            className="flex flex-col items-center group hover:transform hover:scale-105 transition-all"
+          >
+            <div className="w-16 h-16 bg-[#FFD700] rounded-full flex items-center justify-center shadow-lg">
+              <item.icon size={24} className="text-blue-900" />
+            </div>
+            <span className="mt-1 text-white text-center font-semibold text-sm">
+              {item.label}
+            </span>
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
