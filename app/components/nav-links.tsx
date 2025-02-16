@@ -42,7 +42,7 @@ export default function NavLinks() {
               padding: '0.75rem',
               borderRadius: '0.5rem',
               minWidth: item.label === 'Non-Football Films' ? '120px' : '100px', // Reduced widths
-              height: '110px', // Reduced height
+              height: '100px', // Reduced height from 110px to 100px
               justifyContent: 'center',
               boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
               opacity: 0.9
