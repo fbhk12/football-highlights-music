@@ -1,6 +1,6 @@
 'use client';
 import NavLinks from './components/nav-links';
-import { Bungee_Shade } from 'next/font/google';
+import { Bungee_Spice } from 'next/font/google';
 
 const bungeeShade = Bungee_Shade({
   weight: '400',
