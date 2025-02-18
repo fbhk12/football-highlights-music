@@ -93,7 +93,7 @@ export default function Home() {
         textAlign: 'center',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)'
       }}>
-        The Songs And Artists That Contributed To The Golden Age (1966-1979) Of Music Used In Football Highlight Films
+        The Songs And Artists That Contributed To The Golden Age Of Music (1966-1979) Used In Football Highlight Films
       </h4>
 
 
