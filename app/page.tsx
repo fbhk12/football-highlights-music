@@ -99,7 +99,7 @@ export default function Home() {
 
       <h2 className={bungeeShade.className} style={{ 
         fontSize: '2.5rem',
-        color: '#336c53',  // Light blue
+        color: '#f53330b',  // Light blue
         textAlign: 'center',
         textShadow: `
           -4px -4px 0 #000,  
