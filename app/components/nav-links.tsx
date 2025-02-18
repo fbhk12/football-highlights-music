@@ -35,7 +35,6 @@ export default function NavLinks() {
               The Music
             </span>
           </div>
-          {/* Rest of The Music section stays the same */}
           <div style={{ 
             display: 'flex', 
             flexDirection: 'row', 
@@ -50,8 +49,18 @@ export default function NavLinks() {
             ].map((item, index) => (
               <a key={index} href={item.href} className="flex flex-col items-center">
                 <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
-                    <item.icon className="text-white" size={24} />
+                  <div style={{ 
+                    width: '40px', 
+                    height: '40px', 
+                    backgroundColor: 'white', 
+                    borderRadius: '50%', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    marginBottom: '4px',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+                  }}>
+                    <item.icon className="text-black" size={24} />
                   </div>
                   <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>{item.label}</span>
                 </div>
@@ -99,8 +108,18 @@ export default function NavLinks() {
             ].map((item, index) => (
               <a key={index} href={item.href} className="flex flex-col items-center">
                 <div style={{ width: item.width || '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
-                    <item.icon className="text-white" size={24} />
+                  <div style={{ 
+                    width: '40px', 
+                    height: '40px', 
+                    backgroundColor: 'white', 
+                    borderRadius: '50%', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    marginBottom: '4px',
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+                  }}>
+                    <item.icon className="text-black" size={24} />
                   </div>
                   <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>{item.label}</span>
                 </div>
