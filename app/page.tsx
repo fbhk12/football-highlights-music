@@ -2,7 +2,7 @@
 import NavLinks from './components/nav-links';
 import { Bungee_Spice } from 'next/font/google';
 
-const bungeeShade = Bungee_Shade({
+const bungeeShade = Bungee_Spice({
   weight: '400',
   subsets: ['latin']
 });
@@ -97,7 +97,7 @@ export default function Home() {
       </h4>
 
 
-      <h2 className={bungeeShade.className} style={{ 
+      <h2 className={bungeeSpice.className} style={{ 
         fontSize: '2.5rem',
         color: '#c2f9ad',  // Light blue
         textAlign: 'center',
