@@ -21,14 +21,21 @@ export default function NavLinks() {
           <div style={{ 
             position: 'absolute',
             top: '-1rem',
-            left: '2rem',
-            backgroundColor: 'black',
-            padding: '0 1rem'
+            left: '0',
+            right: '0',
+            textAlign: 'center'
           }}>
-            <span style={{ color: '#FFD700', fontSize: '1.25rem', fontWeight: 'bold' }}>
+            <span style={{ 
+              color: '#FFD700', 
+              fontSize: '1.25rem', 
+              fontWeight: 'bold',
+              backgroundColor: 'black',
+              padding: '0 1rem'
+            }}>
               The Music
             </span>
           </div>
+          {/* Rest of The Music section stays the same */}
           <div style={{ 
             display: 'flex', 
             flexDirection: 'row', 
@@ -64,11 +71,17 @@ export default function NavLinks() {
           <div style={{ 
             position: 'absolute',
             top: '-1rem',
-            left: '2rem',
-            backgroundColor: 'black',
-            padding: '0 1rem'
+            left: '0',
+            right: '0',
+            textAlign: 'center'
           }}>
-            <span style={{ color: '#FFD700', fontSize: '1.25rem', fontWeight: 'bold' }}>
+            <span style={{ 
+              color: '#FFD700', 
+              fontSize: '1.25rem', 
+              fontWeight: 'bold',
+              backgroundColor: 'black',
+              padding: '0 1rem'
+            }}>
               The Films
             </span>
           </div>
