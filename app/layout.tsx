@@ -1,4 +1,9 @@
-import { Bungee_Shade } from 'next/font/google';
+import { Oswald, Bungee_Shade } from 'next/font/google';
+
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '700']
+});
 
 const bungeeShade = Bungee_Shade({
   weight: '400',
