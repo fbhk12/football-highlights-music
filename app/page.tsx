@@ -103,7 +103,7 @@ export default function Home() {
         textTransform: 'uppercase',
         letterSpacing: '0.1em',
         fontWeight: 700,
-        marginBottom:  '4rem', //increased from 3rem to hopefully move the h2 heading down a little
+        marginBottom:  '3rem', //increase to 4rem moved icon boxes down
         textShadow: `
           -2px -2px 0 #000,  
            2px -2px 0 #000,
