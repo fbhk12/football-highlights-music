@@ -2,7 +2,7 @@
 import NavLinks from './components/nav-links';
 import { Bungee_Spice } from 'next/font/google';
 
-const bungeeShade = Bungee_Spice({
+const bungeeSpice = Bungee_Spice({
   weight: '400',
   subsets: ['latin']
 });
