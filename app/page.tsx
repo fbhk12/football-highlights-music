@@ -81,7 +81,7 @@ export default function Home() {
       </h1>
 
       <h4 style={{ 
-        fontSize: '1.25rem',
+        fontSize: '1.5rem',
         color: 'white',
         marginBottom: '2rem',
         textAlign: 'center',
@@ -90,31 +90,31 @@ export default function Home() {
         The Songs And Artists That Contributed To The Golden Age (1966-1979) Of Music Used In Football Highlight Films
       </h4>
 
-      <h2 style={{ 
-        fontSize: '2.5rem',
-        color: '#87CEEB',  // Light blue
-        fontFamily: "'Righteous', cursive",
-        textAlign: 'center',
-        textShadow: `
-          -4px -4px 0 #000,  
-           4px -4px 0 #000,
-          -4px  4px 0 #000,
-           4px  4px 0 #000,
-          -4px  0   0 #000,
-           4px  0   0 #000,
-           0   -4px 0 #000,
-           0    4px 0 #000,
-          -3px -3px 0 #000,  
-           3px -3px 0 #000,
-          -3px  3px 0 #000,
-           3px  3px 0 #000,
-          -2px -2px 0 #000,  
-           2px -2px 0 #000,
-          -2px  2px 0 #000,
-           2px  2px 0 #000`  // Multiple layers of shadows for thicker outline
-      }}>
-        &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
-      </h2>
+<h2 style={{ 
+  fontSize: '2.5rem',
+  color: '#87CEEB',  // Light blue
+  fontFamily: bungeeShade.style.fontFamily,
+  textAlign: 'center',
+  textShadow: `
+    -4px -4px 0 #000,  
+     4px -4px 0 #000,
+    -4px  4px 0 #000,
+     4px  4px 0 #000,
+    -4px  0   0 #000,
+     4px  0   0 #000,
+     0   -4px 0 #000,
+     0    4px 0 #000,
+    -3px -3px 0 #000,  
+     3px -3px 0 #000,
+    -3px  3px 0 #000,
+     3px  3px 0 #000,
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000`  // Multiple layers of shadows for thicker outline
+}}>
+  &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
+</h2>
       <div style={{ width: '100%' }}>
         <NavLinks />
       </div>
