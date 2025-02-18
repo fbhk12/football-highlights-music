@@ -13,7 +13,7 @@ const recordLabels = [
   { name: 'De Wolfe', id: 'de-wolfe' },
   { name: 'Sylvester', id: 'sylvester' },
   { name: 'Chappell', id: 'chappell' },
-  { name: 'Standard Music Library', id: 'standard-music-library' }
+  { name: 'Standard Music Library', id: 'standard-music-library' },
   { name: 'Sam Fox', id: 'sam-fox' },
   { name: 'Impress', id: 'impress' },
   { name: 'Berry Music', id: 'berry-music' },
