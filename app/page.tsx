@@ -113,7 +113,11 @@ export default function Home() {
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
 
-      <div style={{ width: '100%' }}>
+       <div style={{ 
+        width: '100%',
+        marginTop: 'auto',  // This will push the NavLinks down
+        paddingTop: '2rem'  // Add some space above the NavLinks
+      }}>
         <NavLinks />
       </div>
     </main>
