@@ -1,9 +1,9 @@
-import { Oswald } from 'next/font/google'
+import { Bungee_Shade } from 'next/font/google';
 
-const oswald = Oswald({
-  subsets: ['latin'],
-  weight: '700'
-})
+const bungeeShade = Bungee_Shade({
+  weight: '400',
+  subsets: ['latin']
+});
 
 export default function RootLayout({
   children,
