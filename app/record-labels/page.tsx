@@ -34,7 +34,7 @@ export default function RecordLabels() {
         {/* Page Title */}
         <h1 className={oswald.className} style={{
           fontSize: '2.5rem',
-          color: colors.nflGold,
+          color: '#FFD700',
           textAlign: 'center',
           marginBottom: '2rem',
           textTransform: 'uppercase',
