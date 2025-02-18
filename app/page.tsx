@@ -99,7 +99,7 @@ export default function Home() {
 
       <h2 className={oswald.className} style={{ 
         fontSize: '2.5rem',
-        color: '#c2f9ad',  // Gossip light green
+        color: '#95f374',  // Sulu from #c2f9ad Gossip light green
         textAlign: 'center',
         textTransform: 'uppercase',
         letterSpacing: '0.1em',
