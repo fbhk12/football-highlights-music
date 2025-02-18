@@ -3,7 +3,7 @@ import NavLinks from './components/nav-links';
 import { Bungee_Spice } from 'next/font/google';
 
 const bungeeSpice = Bungee_Spice({
-  weight: '400',
+  weight: '350',
   subsets: ['latin']
 });
 
