@@ -116,7 +116,7 @@ export default function Home() {
          <div style={{ 
         width: '100%',
         marginTop: '1rem',  // Reduced from auto to a specific value
-        paddingTop: '1.75rem'  // Reduced padding to move boxes up
+        paddingTop: '2rem'  // Reduced padding to move boxes up
       }}>
         <NavLinks />
       </div>
