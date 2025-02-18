@@ -88,7 +88,7 @@ export default function Home() {
       <h4 style={{ 
         fontSize: '1.5rem',
         color: 'white',
-        marginBottom: '1rem',
+        marginBottom: '2rem', //increased from 1rem
         textAlign: 'center',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)'
       }}>
