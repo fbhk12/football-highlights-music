@@ -18,7 +18,7 @@ export default function Home() {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center'
+      paddingTop: '1rem' // Added to adjust overall vertical positioning
     }}>
     <h1 style={{ 
         position: 'relative',
@@ -39,7 +39,6 @@ export default function Home() {
         gap: '4px',
         justifyContent: 'center',
         alignItems: 'baseline',  // Changed from 'end' to 'baseline' for bottom alignment
-        marginBottom: '2rem',
         width: '100%',  // Ensure full width for proper centering
         maxWidth: '1200px',
         margin: '0 auto'
@@ -89,7 +88,7 @@ export default function Home() {
       <h4 style={{ 
         fontSize: '1.5rem',
         color: 'white',
-        marginBottom: 1rem',
+        marginBottom: '1rem',
         textAlign: 'center',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)'
       }}>
