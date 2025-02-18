@@ -103,7 +103,7 @@ export default function Home() {
         textTransform: 'uppercase',
         letterSpacing: '0.1em',
         fontWeight: 700,
-        marginBottom:  '1.5rem',
+        marginBottom:  '2.5rem',
         textShadow: `
           -2px -2px 0 #000,  
            2px -2px 0 #000,
