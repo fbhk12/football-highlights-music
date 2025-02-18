@@ -99,25 +99,13 @@ export default function Home() {
 
       <h2 className={bungeeShade.className} style={{ 
         fontSize: '2.5rem',
-        color: '#bdffaa',  // Light blue
+        color: '#87CEEB',  // Light blue
         textAlign: 'center',
         textShadow: `
-          -4px -4px 0 #000,  
-           4px -4px 0 #000,
-          -4px  4px 0 #000,
-           4px  4px 0 #000,
-          -4px  0   0 #000,
-           4px  0   0 #000,
-           0   -4px 0 #000,
-           0    4px 0 #000,
-          -3px -3px 0 #000,  
-           3px -3px 0 #000,
-          -3px  3px 0 #000,
-           3px  3px 0 #000,
           -2px -2px 0 #000,  
            2px -2px 0 #000,
           -2px  2px 0 #000,
-           2px  2px 0 #000`  // Multiple layers of shadows for thicker outline
+           2px  2px 0 #000`  // Reduced to just four main shadow directions
       }}>
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
