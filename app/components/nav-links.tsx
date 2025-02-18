@@ -3,88 +3,137 @@ import { Music, Mic2, Disc, Building2, Trophy, Calendar, Film, Video } from 'luc
 
 export default function NavLinks() {
   return (
-    <div className="w-full max-w-[1200px] mx-auto px-4">
-      <div className="flex flex-col gap-8">
-        {/* The Music Section */}
-        <div className="relative border-2 border-[#FFD700] rounded-lg p-6">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black px-4">
-            <span className="text-[#FFD700] text-xl font-bold">The Music</span>
-          </div>
-          <div className="flex justify-between">
-            <a href="/songs" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Music size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Songs</span>
-              </div>
-            </a>
-            <a href="/artists" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Mic2 size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Artists</span>
-              </div>
-            </a>
-            <a href="/albums" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Disc size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Albums</span>
-              </div>
-            </a>
-            <a href="/labels" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Building2 size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Record Labels</span>
-              </div>
-            </a>
-          </div>
+    <div style={{ width: '100%', maxWidth: '1200px', margin: '2rem auto', padding: '0 1rem' }}>
+      {/* The Music Section */}
+      <div style={{ 
+        border: '2px solid #FFD700', 
+        borderRadius: '8px', 
+        padding: '2rem 1rem 1rem',
+        marginBottom: '2rem',
+        position: 'relative' 
+      }}>
+        <div style={{ 
+          position: 'absolute',
+          top: '-1rem',
+          left: '2rem',
+          backgroundColor: 'black',
+          padding: '0 1rem'
+        }}>
+          <span style={{ color: '#FFD700', fontSize: '1.25rem', fontWeight: 'bold' }}>
+            The Music
+          </span>
         </div>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'row', 
+          justifyContent: 'space-between',
+          gap: '1rem' 
+        }}>
+          {/* Songs */}
+          <a href="/songs" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Music className="text-white" size={24} />
+              </div>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Songs</span>
+            </div>
+          </a>
 
-        {/* The Films Section */}
-        <div className="relative border-2 border-[#FFD700] rounded-lg p-6">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black px-4">
-            <span className="text-[#FFD700] text-xl font-bold">The Films</span>
-          </div>
-          <div className="flex justify-between">
-            <a href="/teams" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Trophy size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Teams</span>
+          {/* Artists */}
+          <a href="/artists" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Mic2 className="text-white" size={24} />
               </div>
-            </a>
-            <a href="/seasons" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Calendar size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Seasons</span>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Artists</span>
+            </div>
+          </a>
+
+          {/* Albums */}
+          <a href="/albums" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Disc className="text-white" size={24} />
               </div>
-            </a>
-            <a href="/specials" className="flex flex-col items-center">
-              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Film size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Specials</span>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Albums</span>
+            </div>
+          </a>
+
+          {/* Record Labels */}
+          <a href="/labels" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Building2 className="text-white" size={24} />
               </div>
-            </a>
-            <a href="/other-films" className="flex flex-col items-center">
-              <div className="w-[120px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
-                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
-                  <Video size={20} className="text-white" />
-                </div>
-                <span className="text-black font-semibold text-sm">Non-Football Films</span>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Record Labels</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      {/* The Films Section */}
+      <div style={{ 
+        border: '2px solid #FFD700', 
+        borderRadius: '8px', 
+        padding: '2rem 1rem 1rem',
+        position: 'relative' 
+      }}>
+        <div style={{ 
+          position: 'absolute',
+          top: '-1rem',
+          left: '2rem',
+          backgroundColor: 'black',
+          padding: '0 1rem'
+        }}>
+          <span style={{ color: '#FFD700', fontSize: '1.25rem', fontWeight: 'bold' }}>
+            The Films
+          </span>
+        </div>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'row', 
+          justifyContent: 'space-between',
+          gap: '1rem' 
+        }}>
+          {/* Teams */}
+          <a href="/teams" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Trophy className="text-white" size={24} />
               </div>
-            </a>
-          </div>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Teams</span>
+            </div>
+          </a>
+
+          {/* Seasons */}
+          <a href="/seasons" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Calendar className="text-white" size={24} />
+              </div>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Seasons</span>
+            </div>
+          </a>
+
+          {/* Specials */}
+          <a href="/specials" className="flex flex-col items-center">
+            <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Film className="text-white" size={24} />
+              </div>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Specials</span>
+            </div>
+          </a>
+
+          {/* Non-Football Films */}
+          <a href="/other-films" className="flex flex-col items-center">
+            <div style={{ width: '120px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '40px', height: '40px', backgroundColor: '#1e3a8a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '4px' }}>
+                <Video className="text-white" size={24} />
+              </div>
+              <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>Non-Football Films</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
