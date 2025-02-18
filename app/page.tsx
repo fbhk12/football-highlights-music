@@ -23,7 +23,7 @@ export default function Home() {
     <h1 style={{ 
         position: 'relative',
         color: '#FFD700',
-        marginBottom: '32px',
+        marginBottom: '1rem',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)',
         fontFamily: "'Oswald', sans-serif",
         fontSize: '64px',
@@ -89,7 +89,7 @@ export default function Home() {
       <h4 style={{ 
         fontSize: '1.5rem',
         color: 'white',
-        marginBottom: '2rem',
+        marginBottom: 1rem',
         textAlign: 'center',
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.9)'
       }}>
@@ -104,6 +104,7 @@ export default function Home() {
         textTransform: 'uppercase',
         letterSpacing: '0.1em',
         fontWeight: 700,
+        marginBottom:  '2rem''
         textShadow: `
           -2px -2px 0 #000,  
            2px -2px 0 #000,
