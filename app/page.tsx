@@ -103,6 +103,7 @@ export default function Home() {
         textTransform: 'uppercase',
         letterSpacing: '0.1em',
         fontWeight: 700,
+        marginTop: '2rem',  
         marginBottom:  '3rem', //increase to 4rem moved icon boxes down
         textShadow: `
           -2px -2px 0 #000,  
