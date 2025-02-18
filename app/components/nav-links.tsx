@@ -2,118 +2,90 @@
 import { Music, Mic2, Disc, Building2, Trophy, Calendar, Film, Video } from 'lucide-react';
 
 export default function NavLinks() {
-  const musicItems = [
-    { href: '/songs', icon: Music, label: 'Songs' },
-    { href: '/artists', icon: Mic2, label: 'Artists' },
-    { href: '/albums', icon: Disc, label: 'Albums' },
-    { href: '/labels', icon: Building2, label: 'Record Labels' },
-  ];
-
-  const filmItems = [
-    { href: '/teams', icon: Trophy, label: 'Teams' },
-    { href: '/seasons', icon: Calendar, label: 'Seasons' },
-    { href: '/specials', icon: Film, label: 'Specials' },
-    { href: '/other-films', icon: Video, label: 'Non-Football Films' },
-  ];
-
-  const IconGroup = ({ items }) => (
-    <div style={{
-      display: 'flex',
-      gap: '1.5rem',
-      justifyContent: 'center'
-    }}>
-      {items.map((item, index) => (
-        <a
-          key={index}
-          href={item.href}
-          className="group hover:transform hover:scale-105 transition-all"
-        >
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            backgroundColor: '#FFD700',
-            padding: '0.75rem',
-            borderRadius: '0.5rem',
-            minWidth: item.label === 'Non-Football Films' ? '120px' : '100px',
-            height: '80px',
-            justifyContent: 'center',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            opacity: 0.9
-          }}>
-            <div className="w-14 h-14 bg-blue-900 rounded-full flex items-center justify-center shadow-lg mb-1">
-              <item.icon size={28} className="text-white" />
-            </div>
-            <span style={{
-              color: '#000',
-              fontSize: '1rem',
-              fontWeight: '600',
-              textAlign: 'center',
-              marginTop: '0.25rem',
-              lineHeight: '1.1'
-            }}>
-              {item.label}
-            </span>
-          </div>
-        </a>
-      ))}
-    </div>
-  );
-
   return (
-    <div style={{
-      width: '100%',
-      maxWidth: '1200px',
-      margin: '2rem auto 0',
-      padding: '0 1rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      gap: '2rem'
-    }}>
-      <div style={{
-        flex: 1,
-        border: '2px solid #FFD700',
-        borderRadius: '0.75rem',
-        padding: '1.5rem 1rem 1rem',
-        position: 'relative'
-      }}>
-        <span style={{
-          position: 'absolute',
-          top: '-0.75rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'rgba(0, 0, 0, 0.8)',
-          padding: '0 0.75rem',
-          color: '#FFD700',
-          fontSize: '1.25rem',
-          fontWeight: '600'
-        }}>
-          The Music
-        </span>
-        <IconGroup items={musicItems} />
-      </div>
+    <div className="w-full max-w-[1200px] mx-auto px-4">
+      <div className="flex flex-col gap-8">
+        {/* The Music Section */}
+        <div className="relative border-2 border-[#FFD700] rounded-lg p-6">
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black px-4">
+            <span className="text-[#FFD700] text-xl font-bold">The Music</span>
+          </div>
+          <div className="flex justify-between">
+            <a href="/songs" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Music size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Songs</span>
+              </div>
+            </a>
+            <a href="/artists" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Mic2 size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Artists</span>
+              </div>
+            </a>
+            <a href="/albums" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Disc size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Albums</span>
+              </div>
+            </a>
+            <a href="/labels" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Building2 size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Record Labels</span>
+              </div>
+            </a>
+          </div>
+        </div>
 
-      <div style={{
-        flex: 1,
-        border: '2px solid #FFD700',
-        borderRadius: '0.75rem',
-        padding: '1.5rem 1rem 1rem',
-        position: 'relative'
-      }}>
-        <span style={{
-          position: 'absolute',
-          top: '-0.75rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          background: 'rgba(0, 0, 0, 0.8)',
-          padding: '0 0.75rem',
-          color: '#FFD700',
-          fontSize: '1.25rem',
-          fontWeight: '600'
-        }}>
-          The Films
-        </span>
-        <IconGroup items={filmItems} />
+        {/* The Films Section */}
+        <div className="relative border-2 border-[#FFD700] rounded-lg p-6">
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black px-4">
+            <span className="text-[#FFD700] text-xl font-bold">The Films</span>
+          </div>
+          <div className="flex justify-between">
+            <a href="/teams" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Trophy size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Teams</span>
+              </div>
+            </a>
+            <a href="/seasons" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Calendar size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Seasons</span>
+              </div>
+            </a>
+            <a href="/specials" className="flex flex-col items-center">
+              <div className="w-[100px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Film size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Specials</span>
+              </div>
+            </a>
+            <a href="/other-films" className="flex flex-col items-center">
+              <div className="w-[120px] h-[80px] bg-[#FFD700] rounded-lg flex flex-col items-center justify-center opacity-90">
+                <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mb-1">
+                  <Video size={20} className="text-white" />
+                </div>
+                <span className="text-black font-semibold text-sm">Non-Football Films</span>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
