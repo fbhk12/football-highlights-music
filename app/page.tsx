@@ -1,9 +1,9 @@
 'use client';
 import NavLinks from './components/nav-links';
-import { Bungee_Spice } from 'next/font/google';
+import { Oswald } from 'next/font/google';
 
-const bungeeSpice = Bungee_Spice({
-  weight: '400',
+const oswald = Oswald({
+  weight: '700',
   subsets: ['latin']
 });
 
@@ -97,15 +97,18 @@ export default function Home() {
       </h4>
 
 
-      <h2 className={bungeeSpice.className} style={{ 
+      <h2 className={oswald.className} style={{ 
         fontSize: '2.5rem',
-        color: '#c2f9ad',  // Light blue
+        color: '#c2f9ad',  // Gossip light green
         textAlign: 'center',
+        textTransform: 'uppercase',
+        letterSpacing: '0.1em',
+        fontWeight: 700,
         textShadow: `
           -2px -2px 0 #000,  
            2px -2px 0 #000,
           -2px  2px 0 #000,
-           2px  2px 0 #000`  // Reduced to just four main shadow directions
+           2px  2px 0 #000`
       }}>
         &ldquo;The Greatest Soundtrack Never Assembled!&rdquo;
       </h2>
