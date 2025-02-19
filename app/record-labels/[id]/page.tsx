@@ -8,8 +8,15 @@ const oswald = Oswald({
   subsets: ['latin']
 });
 
-export default function RecordLabelPage({ params }) {
+type RecordLabelPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   const { id } = params;
+  // Rest of the code stays the same
 
   return (
     <main style={{
