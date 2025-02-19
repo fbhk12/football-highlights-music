@@ -48,7 +48,7 @@ export default function NavLinks() {
               { href: '/albums', icon: Disc, label: 'Albums' },
               { href: '/record-labels', icon: Building2, label: 'Record Labels' }
             ].map((item, index) => (
-              <a key={index} href={item.href} className="flex flex-col items-center">
+              <Link key={index} href={item.href} className="flex flex-col items-center">
                 <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{ 
                     width: '40px', 
@@ -65,7 +65,7 @@ export default function NavLinks() {
                   </div>
                   <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>{item.label}</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function NavLinks() {
               { href: '/specials', icon: Film, label: 'Specials' },
               { href: '/other-films', icon: Video, label: 'Non-Football Films', width: '120px' }
             ].map((item, index) => (
-              <a key={index} href={item.href} className="flex flex-col items-center">
+              <Link key={index} href={item.href} className="flex flex-col items-center">
                 <div style={{ width: item.width || '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{ 
                     width: '40px', 
@@ -124,7 +124,7 @@ export default function NavLinks() {
                   </div>
                   <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>{item.label}</span>
                 </div>
-              </a>
+              </Link
             ))}
           </div>
         </div>
