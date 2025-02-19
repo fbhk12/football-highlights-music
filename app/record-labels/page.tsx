@@ -1,7 +1,7 @@
 'use client';
 import { Oswald } from 'next/font/google';
 import Link from 'next/link';
-import { colors } from '../colors'; 
+import { colors } from '../colors';  // Updated import path
 
 const oswald = Oswald({
   weight: ['400', '700'],
@@ -17,8 +17,7 @@ const recordLabels = [
   { name: 'Sam Fox', id: 'sam-fox' },
   { name: 'Impress', id: 'impress' },
   { name: 'Berry Music', id: 'berry-music' },
-  { name: 'NFL Films', id: 'nfl-films' },
-  // Add the rest of your record labels here
+  { name: 'NFL Films', id: 'nfl-films' }
 ];
 
 export default function RecordLabels() {
@@ -34,7 +33,7 @@ export default function RecordLabels() {
         {/* Page Title */}
         <h1 className={oswald.className} style={{
           fontSize: '2.5rem',
-          color: '#FFD700',
+          color: colors.nflGold,
           textAlign: 'center',
           marginBottom: '2rem',
           textTransform: 'uppercase',
