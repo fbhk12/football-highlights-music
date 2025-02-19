@@ -1,7 +1,7 @@
 'use client';
 import { Oswald } from 'next/font/google';
 import Link from 'next/link';
-import { colors } from '../../../colors';
+import { colors } from '@/app/colors';
 
 const oswald = Oswald({
   weight: ['400', '700'],
