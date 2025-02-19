@@ -45,7 +45,7 @@ export default function NavLinks() {
               { href: '/songs', icon: Music, label: 'Songs' },
               { href: '/artists', icon: Mic2, label: 'Artists' },
               { href: '/albums', icon: Disc, label: 'Albums' },
-              { href: '/labels', icon: Building2, label: 'Record Labels' }
+              { href: '/record-labels', icon: Building2, label: 'Record Labels' }
             ].map((item, index) => (
               <a key={index} href={item.href} className="flex flex-col items-center">
                 <div style={{ width: '100px', height: '80px', backgroundColor: '#FFD700', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
