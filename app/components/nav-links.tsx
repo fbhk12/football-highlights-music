@@ -125,7 +125,7 @@ export default function NavLinks() {
                   </div>
                   <span style={{ color: 'black', fontSize: '0.875rem', fontWeight: '600' }}>{item.label}</span>
                 </div>
-              </Link
+              </Link>
             ))}
           </div>
         </div>
