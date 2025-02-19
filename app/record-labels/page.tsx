@@ -50,7 +50,7 @@ export default function RecordLabels() {
           lineHeight: '1.6',
           fontSize: '1.1rem'
         }}>
-          The record labels that produced albums containing songs used in NFL Films productions from 1966-1979.
+          The record labels that produced albums containing songs used in football highlight films from 1966-1979.
         </p>
 
         {/* Record Labels List */}
