@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { Music, Mic2, Disc, Building2, Trophy, Calendar, Film, Video } from 'lucide-react';
 
 export default function NavLinks() {
