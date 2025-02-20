@@ -1,3 +1,8 @@
+You'll need to add back some essential parts that were in the original file. Here's the complete version for app/record-labels/[id]/page.tsx:
+
+
+
+```typescript
 'use client';
 
 type RecordLabelPageProps = {
@@ -75,3 +80,13 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
     </main>
   );
 }
+```
+
+Key changes made:
+1. Added 'use client' directive at the top
+2. Added RecordLabelPageProps type definition
+3. Changed function name back to RecordLabelPage
+4. Added background styling to match your site theme
+5. Fixed the props typing for the page component
+
+This should now work when you click on KPM from the Record Labels page. Let me know if you need any adjustments to the layout or styling!
