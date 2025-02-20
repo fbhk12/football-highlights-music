@@ -35,7 +35,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             color: '#FFD700',
             padding: '0.5rem 1rem',
-            marginBottom: '2rem',
+            marginBottom: '1rem',
             borderRadius: '0.25rem'
           }}
         >
@@ -46,56 +46,60 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           <h2 style={{ 
             color: '#FFD700',
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            padding: '1rem'
+            padding: '0.5rem 1rem',
+            marginBottom: 0
           }} className="text-2xl font-bold">
             Albums With FHM Songs
           </h2>
 
-          <div style={{ padding: '1rem' }}>
           {/* Column Headers */}
-<div style={{
-  display: 'flex',
-  alignItems: 'center',
-  padding: '0.5rem 1rem',
-  color: '#FFD700',
-  fontWeight: 'bold',
-  borderBottom: '1px solid #FFD700'
-}}>
-  <div style={{ width: '95px' }}></div> {/* Width + margin to match thumbnail space */}
-  <div style={{ width: '100px' }}>Album #</div>
-  <div style={{ flex: 1 }}>Name</div>
-  <div style={{ width: '100px', textAlign: 'center' }}>Released</div>
-  <div style={{ width: '120px', textAlign: 'center' }}># Of FHM Songs</div>
-</div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0.5rem 1rem',
+            color: '#FFD700',
+            fontWeight: 'bold',
+            borderBottom: '1px solid #FFD700',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          }}>
+            <div style={{ width: '85px' }}></div>
+            <div style={{ width: '100px' }}>Album #</div>
+            <div style={{ flex: 1 }}>Name</div>
+            <div style={{ width: '80px', textAlign: 'right' }}>Released</div>
+            <div style={{ width: '50px', textAlign: 'right' }}># Of FHM Songs</div>
+          </div>
 
-{/* Album Rows */}
-{kpmAlbums.map((album) => (
-  <div 
-    key={album.number}
-    style={{
-      backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      padding: '0.75rem 1rem', // Increased padding for better vertical centering
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1px'
-    }}
-  >
-    <img 
-      src="/kpm-album-cover.jpg" 
-      alt="KPM Album"
-      style={{ 
-        width: '65px',
-        height: '65px',
-        marginRight: '15px',
-        objectFit: 'cover'
-      }}
-    />
-    <span style={{ color: '#FFD700', width: '100px' }}>{album.number}</span>
-    <span style={{ color: 'white', flex: 1 }}>{album.title}</span>
-    <span style={{ color: '#FFD700', width: '100px' }}>{album.year}</span>
-    <span style={{ color: 'white', width: '120px', textAlign: 'left' }}>{album.fhmSongs}</span>
-  </div>
-))}
+          {/* Album Rows */}
+          <div>
+            {kpmAlbums.map((album) => (
+              <div 
+                key={album.number}
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  padding: '0.25rem 1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  borderBottom: '1px solid rgba(255, 215, 0, 0.1)'
+                }}
+              >
+                <div style={{ width: '85px', display: 'flex', alignItems: 'center' }}>
+                  <img 
+                    src="/kpm-album-cover.jpg" 
+                    alt="KPM Album"
+                    style={{ 
+                      width: '60px',
+                      height: '60px',
+                      marginRight: '15px',
+                      objectFit: 'cover'
+                    }}
+                  />
+                </div>
+                <div style={{ width: '100px', color: '#FFD700' }}>{album.number}</div>
+                <div style={{ flex: 1, color: 'white' }}>{album.title}</div>
+                <div style={{ width: '80px', color: '#FFD700', textAlign: 'right' }}>{album.year}</div>
+                <div style={{ width: '50px', color: 'white', textAlign: 'right' }}>{album.fhmSongs}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
