@@ -53,21 +53,21 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           </h2>
 
           {/* Column Headers */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0.5rem 1rem',
-            color: '#FFD700',
-            fontWeight: 'bold',
-            borderBottom: '1px solid #FFD700',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          }}>
-            <div style={{ width: '85px' }}></div>
-            <div style={{ width: '100px' }}>Album #</div>
-            <div style={{ flex: 1 }}>Name</div>
-            <div style={{ width: '80px', textAlign: 'right' }}>Released</div>
-            <div style={{ width: '50px', textAlign: 'right' }}># Of FHM Songs</div>
-          </div>
+<div style={{
+  display: 'flex',
+  alignItems: 'center',
+  padding: '0.5rem 1rem',
+  color: '#FFD700',
+  fontWeight: 'bold',
+  borderBottom: '1px solid #FFD700',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+}}>
+  <div style={{ width: '120px' }}></div> {/* Increased to match new thumbnail width */}
+  <div style={{ width: '100px' }}>Album #</div>
+  <div style={{ flex: 1 }}>Name</div>
+  <div style={{ width: '80px', textAlign: 'right' }}>Released</div>
+  <div style={{ width: '50px', textAlign: 'right' }}># Of FHM Songs</div>
+</div>
 
          {/* Album Rows */}
 <div>
