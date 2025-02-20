@@ -30,12 +30,12 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
       background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      padding: '2rem',
+      padding: '2rem'
     }}>
-      <div className="min-h-screen px-8 py-4">
+      <div className="max-w-6xl mx-auto">
         <button 
           onClick={() => window.history.back()}
-          className="inline-block mb-8 text-white hover:text-gray-300"
+          className="mb-8 text-white hover:text-gray-300 px-4 py-2 rounded"
         >
           ← Back to Record Labels
         </button>
@@ -43,30 +43,31 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
         <h1 className="text-4xl text-center mb-8 uppercase tracking-wider text-[#FFD700] font-bold">
           KPM
         </h1>
-        <div className="grid grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <div>
+
+        <div className="grid grid-cols-2 gap-12">
+          <div className="space-y-2">
             {leftColumnAlbums.map((album) => (
               <div 
                 key={album.number}
-                className="flex items-center gap-4 mb-2 text-white hover:bg-black/20 p-2"
+                className="flex items-center bg-black/30 hover:bg-black/50 p-3 rounded"
               >
-                <span className="text-[#FFD700] min-w-[100px]">{album.number}</span>
-                <span className="text-[#FFD700] min-w-[50px]">{album.year}</span>
-                <span className="min-w-[80px]">{album.fhmSongs} songs</span>
-                <span>{album.title}</span>
+                <span className="text-[#FFD700] w-28">{album.number}</span>
+                <span className="text-[#FFD700] w-16">{album.year}</span>
+                <span className="text-white w-24">{album.fhmSongs} songs</span>
+                <span className="text-white flex-1">{album.title}</span>
               </div>
             ))}
           </div>
-          <div>
+          <div className="space-y-2">
             {rightColumnAlbums.map((album) => (
               <div 
                 key={album.number}
-                className="flex items-center gap-4 mb-2 text-white hover:bg-black/20 p-2"
+                className="flex items-center bg-black/30 hover:bg-black/50 p-3 rounded"
               >
-                <span className="text-[#FFD700] min-w-[100px]">{album.number}</span>
-                <span className="text-[#FFD700] min-w-[50px]">{album.year}</span>
-                <span className="min-w-[80px]">{album.fhmSongs} songs</span>
-                <span>{album.title}</span>
+                <span className="text-[#FFD700] w-28">{album.number}</span>
+                <span className="text-[#FFD700] w-16">{album.year}</span>
+                <span className="text-white w-24">{album.fhmSongs} songs</span>
+                <span className="text-white flex-1">{album.title}</span>
               </div>
             ))}
           </div>
@@ -75,13 +76,3 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
     </main>
   );
 }
-```
-
-Key changes made:
-1. Added 'use client' directive at the top
-2. Added RecordLabelPageProps type definition
-3. Changed function name back to RecordLabelPage
-4. Added background styling to match your site theme
-5. Fixed the props typing for the page component
-
-This should now work when you click on KPM from the Record Labels page. Let me know if you need any adjustments to the layout or styling!
