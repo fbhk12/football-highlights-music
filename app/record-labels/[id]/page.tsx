@@ -36,21 +36,31 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           ← Back to Record Labels
         </button>
         
-        <div className="border-2 border-[#FFD700] rounded-lg overflow-hidden">
-          <h2 className="text-[#FFD700] text-2xl font-bold p-4 bg-black/50">
+        <div style={{ border: '2px solid #FFD700' }} className="rounded-lg overflow-hidden">
+          <h2 style={{ 
+            color: '#FFD700',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            padding: '1rem'
+          }} className="text-2xl font-bold">
             Albums with FHM Songs
           </h2>
           
-          <div className="space-y-1">
+          <div>
             {kpmAlbums.map((album) => (
               <div 
                 key={album.number}
-                className="flex items-center bg-black/50 hover:bg-black/70 px-4 py-2"
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  padding: '0.5rem 1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem'
+                }}
               >
-                <span className="text-[#FFD700] w-28">{album.number}</span>
-                <span className="text-white flex-1">{album.title}</span>
-                <span className="text-[#FFD700] w-16 text-right">{album.year}</span>
-                <span className="text-white w-32 text-right">FHM Songs: {album.fhmSongs}</span>
+                <span style={{ color: '#FFD700', width: '7rem' }}>{album.number}</span>
+                <span style={{ color: 'white', flex: '1' }}>{album.title}</span>
+                <span style={{ color: '#FFD700', width: '4rem', textAlign: 'right' }}>{album.year}</span>
+                <span style={{ color: 'white', width: '8rem', textAlign: 'right' }}>FHM Songs: {album.fhmSongs}</span>
               </div>
             ))}
           </div>
