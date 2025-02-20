@@ -14,10 +14,20 @@ type RecordLabelPageProps = {
   };
 };
 
-export default function RecordLabelPage({ params }: RecordLabelPageProps) {
-  const { id } = params;
-  // Rest of the code stays the same
+const kpmAlbums = [
+  { number: 'KPM 1001', title: 'The Mood Modern', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1002', title: 'The Sounds Of Syd Dale', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1003', title: 'The Backgrounds', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1008', title: 'A Distinctive Approach', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1015', title: 'The Sound Of Pop', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1017', title: 'Impact And Action', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1018', title: 'Tension And Suspense', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1019', title: 'Comedy', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1020', title: 'Twentieth Century Portrait', year: 1967, songsUsed: 6 },
+  { number: 'KPM 1026', title: 'Orchestral Kaleidoscope', year: 1967, songsUsed: 6 },
+];
 
+export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   return (
     <main style={{
       minHeight: '100vh',
@@ -53,7 +63,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           letterSpacing: '0.1em',
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)'
         }}>
-          {id.toUpperCase()}
+          KPM
         </h1>
 
         {/* Overview Section */}
@@ -69,7 +79,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             lineHeight: '1.6',
             fontSize: '1.1rem'
           }}>
-            Overview paragraph about the record label will go here.
+            Founded in London in 1956, Keith Prowse Music (KPM) became one of the most important publishers of production music in the 1960s. Their distinctive green album covers and high-quality recordings made them a favorite source for NFL Films music between 1966-1979.
           </p>
         </div>
 
@@ -85,38 +95,43 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             color: colors.nflGold,
             marginBottom: '1.5rem'
           }}>
-            Albums with NFL Films Songs
+            Albums with FHM Songs
           </h2>
 
-          {/* Album List */}
           <div style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '1rem'
           }}>
-            {/* Sample album entry - we'll make this dynamic later */}
-            <div style={{
-              padding: '1rem',
-              borderRadius: '4px',
-              backgroundColor: 'rgba(255, 255, 255, 0.05)',
-              border: '1px solid rgba(255, 215, 0, 0.2)'
-            }}>
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                color: 'white'
-              }}>
-                <div>
-                  <span style={{ color: colors.nflGold, fontWeight: 'bold' }}>Album Number</span>
-                  <h3 style={{ fontSize: '1.2rem', marginTop: '0.25rem' }}>Album Title</h3>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div style={{ color: colors.nflGold }}>Year Released</div>
-                  <div style={{ marginTop: '0.25rem' }}>NFL Films Songs: #</div>
+            {kpmAlbums.map((album, index) => (
+              <div 
+                key={index}
+                style={{
+                  padding: '1rem',
+                  borderRadius: '4px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 215, 0, 0.2)',
+                  transition: 'all 0.2s ease'
+                }}
+                className="hover:bg-white/10"
+              >
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  color: 'white'
+                }}>
+                  <div>
+                    <span style={{ color: colors.nflGold, fontWeight: 'bold' }}>{album.number}</span>
+                    <h3 style={{ fontSize: '1.2rem', marginTop: '0.25rem' }}>{album.title}</h3>
+                  </div>
+                  <div style={{ textAlign: 'right' }}>
+                    <div style={{ color: colors.nflGold }}>{album.year}</div>
+                    <div style={{ marginTop: '0.25rem' }}>FHM Songs: {album.songsUsed}</div>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
