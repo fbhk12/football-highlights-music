@@ -8,7 +8,24 @@ const oswald = Oswald({
   subsets: ['latin']
 });
 
-// Rest of the imports and type definitions remain the same...
+type RecordLabelPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+const kpmAlbums = [
+  { number: 'KPM 1001', title: 'The Mood Modern', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1002', title: 'The Sounds Of Syd Dale', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1003', title: 'The Backgrounds', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1008', title: 'A Distinctive Approach', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1015', title: 'The Sound Of Pop', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1017', title: 'Impact And Action', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1018', title: 'Tension And Suspense', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1019', title: 'Comedy', year: 1966, songsUsed: 6 },
+  { number: 'KPM 1020', title: 'Twentieth Century Portrait', year: 1967, songsUsed: 6 },
+  { number: 'KPM 1026', title: 'Orchestral Kaleidoscope', year: 1967, songsUsed: 6 },
+];
 
 export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   return (
@@ -20,7 +37,51 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
       padding: '2rem',
     }}>
       <div className="max-w-4xl mx-auto">
-        {/* Navigation and title sections remain the same... */}
+        {/* Navigation */}
+        <div style={{ marginBottom: '2rem' }}>
+          <Link 
+            href="/record-labels"
+            style={{
+              color: colors.nflGold,
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem'
+            }}
+          >
+            ← Back to Record Labels
+          </Link>
+        </div>
+
+        {/* Label Title */}
+        <h1 className={oswald.className} style={{
+          fontSize: '2.5rem',
+          color: colors.nflGold,
+          textAlign: 'center',
+          marginBottom: '2rem',
+          textTransform: 'uppercase',
+          letterSpacing: '0.1em',
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)'
+        }}>
+          KPM
+        </h1>
+
+        {/* Overview Section */}
+        <div style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          padding: '2rem',
+          borderRadius: '8px',
+          border: `1px solid ${colors.nflGold}`,
+          marginBottom: '2rem'
+        }}>
+          <p style={{
+            color: 'white',
+            lineHeight: '1.6',
+            fontSize: '1.1rem'
+          }}>
+            Founded in London in 1956, Keith Prowse Music (KPM) became one of the most important publishers of production music in the 1960s. Their distinctive green album covers and high-quality recordings made them a favorite source for NFL Films music between 1966-1979.
+          </p>
+        </div>
 
         {/* Albums Section with checklist style */}
         <div style={{
