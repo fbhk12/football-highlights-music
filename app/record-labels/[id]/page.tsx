@@ -31,7 +31,13 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
       <div className="max-w-6xl mx-auto">
         <button 
           onClick={() => window.history.back()}
-          className="mb-8 text-white hover:text-gray-300"
+          style={{
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            color: '#FFD700',
+            padding: '0.5rem 1rem',
+            marginBottom: '2rem',
+            borderRadius: '0.25rem'
+          }}
         >
           ← Back to Record Labels
         </button>
@@ -44,8 +50,25 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           }} className="text-2xl font-bold">
             Albums With FHM Songs
           </h2>
-          
-          <div>
+
+          <div style={{ padding: '1rem' }}>
+            {/* Column Headers */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              padding: '0.5rem 1rem',
+              color: '#FFD700',
+              fontWeight: 'bold',
+              borderBottom: '1px solid #FFD700'
+            }}>
+              <div style={{ width: '50px' }}></div> {/* Space for album image */}
+              <div style={{ width: '100px' }}>Album #</div>
+              <div style={{ flex: 1 }}>Name</div>
+              <div style={{ width: '100px' }}>Released</div>
+              <div style={{ width: '120px' }}>FHM Songs</div>
+            </div>
+
+            {/* Album Rows */}
             {kpmAlbums.map((album) => (
               <div 
                 key={album.number}
@@ -54,13 +77,23 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
                   padding: '0.5rem 1rem',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '1rem'
+                  marginBottom: '1px'
                 }}
               >
-                <span style={{ color: '#FFD700', width: '7rem' }}>{album.number}</span>
-                <span style={{ color: 'white', flex: '1' }}>{album.title}</span>
-                <span style={{ color: '#FFD700', width: '4rem', textAlign: 'right' }}>{album.year}</span>
-                <span style={{ color: 'white', width: '8rem', textAlign: 'right' }}>FHM Songs: {album.fhmSongs}</span>
+                <img 
+                  src="/kpm-album-cover.jpg" 
+                  alt="KPM Album"
+                  style={{ 
+                    width: '40px',
+                    height: '40px',
+                    marginRight: '10px',
+                    objectFit: 'cover'
+                  }}
+                />
+                <span style={{ color: '#FFD700', width: '100px' }}>{album.number}</span>
+                <span style={{ color: 'white', flex: 1 }}>{album.title}</span>
+                <span style={{ color: '#FFD700', width: '100px' }}>{album.year}</span>
+                <span style={{ color: 'white', width: '120px' }}>FHM Songs: {album.fhmSongs}</span>
               </div>
             ))}
           </div>
