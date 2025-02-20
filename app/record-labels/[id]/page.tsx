@@ -1,8 +1,3 @@
-You'll need to add back some essential parts that were in the original file. Here's the complete version for app/record-labels/[id]/page.tsx:
-
-
-
-```typescript
 'use client';
 
 type RecordLabelPageProps = {
