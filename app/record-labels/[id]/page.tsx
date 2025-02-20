@@ -52,30 +52,29 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           </h2>
 
           <div style={{ padding: '1rem' }}>
-            {/* Column Headers */}
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              padding: '0.5rem 1rem',
-              color: '#FFD700',
-              fontWeight: 'bold',
-              borderBottom: '1px solid #FFD700'
-            }}>
-              <div style={{ width: '50px' }}></div> {/* Space for album image */}
-              <div style={{ width: '100px' }}>Album #</div>
-              <div style={{ flex: 1 }}>Name</div>
-              <div style={{ width: '100px' }}>Released</div>
-              <div style={{ width: '120px' }}># Of FHM Songs</div>
-            </div>
+           {/* Column Headers */}
+<div style={{
+  display: 'flex',
+  alignItems: 'center',
+  padding: '0.5rem 1rem',
+  color: '#FFD700',
+  fontWeight: 'bold',
+  borderBottom: '1px solid #FFD700'
+}}>
+  <div style={{ width: '80px' }}></div> {/* Increased space for larger album image */}
+  <div style={{ width: '100px' }}>Album #</div>
+  <div style={{ flex: 1 }}>Name</div>
+  <div style={{ width: '100px' }}>Released</div>
+  <div style={{ width: '120px' }}># Of FHM Songs</div>
+</div>
 
-            {/* Album Rows */}
-            {/* Album Rows */}
+{/* Album Rows */}
 {kpmAlbums.map((album) => (
   <div 
     key={album.number}
     style={{
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
-      padding: '0.5rem 1rem',
+      padding: '0.75rem 1rem', // Increased padding for better vertical centering
       display: 'flex',
       alignItems: 'center',
       marginBottom: '1px'
@@ -85,17 +84,16 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
       src="/kpm-album-cover.jpg" 
       alt="KPM Album"
       style={{ 
-        width: '50px',
-        height: '50px',
+        width: '65px',
+        height: '65px',
         marginRight: '15px',
-        objectFit: 'cover',
-        alignSelf: 'center'  // Ensures vertical centering
+        objectFit: 'cover'
       }}
     />
     <span style={{ color: '#FFD700', width: '100px' }}>{album.number}</span>
     <span style={{ color: 'white', flex: 1 }}>{album.title}</span>
     <span style={{ color: '#FFD700', width: '100px' }}>{album.year}</span>
-    <span style={{ color: 'white', width: '120px' }}>FHM Songs: {album.fhmSongs}</span>
+    <span style={{ color: 'white', width: '120px', textAlign: 'left' }}>{album.fhmSongs}</span>
   </div>
 ))}
           </div>
