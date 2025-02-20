@@ -52,7 +52,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           </h2>
 
           <div style={{ padding: '1rem' }}>
-           {/* Column Headers */}
+          {/* Column Headers */}
 <div style={{
   display: 'flex',
   alignItems: 'center',
@@ -61,11 +61,11 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   fontWeight: 'bold',
   borderBottom: '1px solid #FFD700'
 }}>
-  <div style={{ width: '80px' }}></div> {/* Increased space for larger album image */}
+  <div style={{ width: '95px' }}></div> {/* Width + margin to match thumbnail space */}
   <div style={{ width: '100px' }}>Album #</div>
   <div style={{ flex: 1 }}>Name</div>
-  <div style={{ width: '100px' }}>Released</div>
-  <div style={{ width: '120px' }}># Of FHM Songs</div>
+  <div style={{ width: '100px', textAlign: 'center' }}>Released</div>
+  <div style={{ width: '120px', textAlign: 'center' }}># Of FHM Songs</div>
 </div>
 
 {/* Album Rows */}
