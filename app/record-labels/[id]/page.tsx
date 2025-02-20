@@ -20,10 +20,6 @@ const kpmAlbums = [
 ];
 
 export default function RecordLabelPage({ params }: RecordLabelPageProps) {
-  const halfwayPoint = Math.ceil(kpmAlbums.length / 2);
-  const leftColumnAlbums = kpmAlbums.slice(0, halfwayPoint);
-  const rightColumnAlbums = kpmAlbums.slice(halfwayPoint);
-
   return (
     <main style={{
       minHeight: '100vh',
@@ -35,39 +31,26 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
       <div className="max-w-6xl mx-auto">
         <button 
           onClick={() => window.history.back()}
-          className="mb-8 text-white hover:text-gray-300 px-4 py-2 rounded"
+          className="mb-8 text-white hover:text-gray-300"
         >
           ← Back to Record Labels
         </button>
         
-        <h1 className="text-4xl text-center mb-8 uppercase tracking-wider text-[#FFD700] font-bold">
-          KPM
-        </h1>
-
-        <div className="grid grid-cols-2 gap-12">
-          <div className="space-y-2">
-            {leftColumnAlbums.map((album) => (
+        <div className="border-2 border-[#FFD700] rounded-lg overflow-hidden">
+          <h2 className="text-[#FFD700] text-2xl font-bold p-4 bg-black/50">
+            Albums with FHM Songs
+          </h2>
+          
+          <div className="space-y-1">
+            {kpmAlbums.map((album) => (
               <div 
                 key={album.number}
-                className="flex items-center bg-black/30 hover:bg-black/50 p-3 rounded"
+                className="flex items-center bg-black/50 hover:bg-black/70 px-4 py-2"
               >
                 <span className="text-[#FFD700] w-28">{album.number}</span>
-                <span className="text-[#FFD700] w-16">{album.year}</span>
-                <span className="text-white w-24">{album.fhmSongs} songs</span>
                 <span className="text-white flex-1">{album.title}</span>
-              </div>
-            ))}
-          </div>
-          <div className="space-y-2">
-            {rightColumnAlbums.map((album) => (
-              <div 
-                key={album.number}
-                className="flex items-center bg-black/30 hover:bg-black/50 p-3 rounded"
-              >
-                <span className="text-[#FFD700] w-28">{album.number}</span>
-                <span className="text-[#FFD700] w-16">{album.year}</span>
-                <span className="text-white w-24">{album.fhmSongs} songs</span>
-                <span className="text-white flex-1">{album.title}</span>
+                <span className="text-[#FFD700] w-16 text-right">{album.year}</span>
+                <span className="text-white w-32 text-right">FHM Songs: {album.fhmSongs}</span>
               </div>
             ))}
           </div>
