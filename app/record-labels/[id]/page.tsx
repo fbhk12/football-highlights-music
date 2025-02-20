@@ -42,7 +42,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             padding: '1rem'
           }} className="text-2xl font-bold">
-            Albums with FHM Songs
+            KPM Albums With FHM Songs
           </h2>
           
           <div>
