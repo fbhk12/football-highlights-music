@@ -65,7 +65,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
               <div style={{ width: '100px' }}>Album #</div>
               <div style={{ flex: 1 }}>Name</div>
               <div style={{ width: '100px' }}>Released</div>
-              <div style={{ width: '120px' }}>FHM Songs</div>
+              <div style={{ width: '120px' }}># Of FHM Songs</div>
             </div>
 
             {/* Album Rows */}
