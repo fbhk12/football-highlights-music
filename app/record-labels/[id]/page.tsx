@@ -69,33 +69,35 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             </div>
 
             {/* Album Rows */}
-            {kpmAlbums.map((album) => (
-              <div 
-                key={album.number}
-                style={{
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  padding: '0.5rem 1rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginBottom: '1px'
-                }}
-              >
-                <img 
-                  src="/kpm-album-cover.jpg" 
-                  alt="KPM Album"
-                  style={{ 
-                    width: '40px',
-                    height: '40px',
-                    marginRight: '10px',
-                    objectFit: 'cover'
-                  }}
-                />
-                <span style={{ color: '#FFD700', width: '100px' }}>{album.number}</span>
-                <span style={{ color: 'white', flex: 1 }}>{album.title}</span>
-                <span style={{ color: '#FFD700', width: '100px' }}>{album.year}</span>
-                <span style={{ color: 'white', width: '120px' }}>FHM Songs: {album.fhmSongs}</span>
-              </div>
-            ))}
+            {/* Album Rows */}
+{kpmAlbums.map((album) => (
+  <div 
+    key={album.number}
+    style={{
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+      padding: '0.5rem 1rem',
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: '1px'
+    }}
+  >
+    <img 
+      src="/kpm-album-cover.jpg" 
+      alt="KPM Album"
+      style={{ 
+        width: '50px',
+        height: '50px',
+        marginRight: '15px',
+        objectFit: 'cover',
+        alignSelf: 'center'  // Ensures vertical centering
+      }}
+    />
+    <span style={{ color: '#FFD700', width: '100px' }}>{album.number}</span>
+    <span style={{ color: 'white', flex: 1 }}>{album.title}</span>
+    <span style={{ color: '#FFD700', width: '100px' }}>{album.year}</span>
+    <span style={{ color: 'white', width: '120px' }}>FHM Songs: {album.fhmSongs}</span>
+  </div>
+))}
           </div>
         </div>
       </div>
