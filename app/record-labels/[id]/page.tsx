@@ -83,7 +83,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
                   display: 'flex',
                   alignItems: 'center',
                   borderBottom: '1px solid rgba(255, 215, 0, 0.1)',
-                  minHeight: '100px'
+                  minHeight: '80px'
                 }}
               >
                 <div style={{ 
