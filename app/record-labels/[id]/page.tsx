@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 
 type RecordLabelPageProps = {
   params: {
@@ -84,21 +85,22 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
       }}
     >
       <div style={{ 
-        width: '120px', // Increased width for larger thumbnail
-        display: 'flex', 
-        alignItems: 'center',
-        padding: '0.25rem'
-      }}>
-        <img 
-          src="KPM-cover-green-front.jpg" 
-          alt="KPM Album"
-          style={{ 
-            width: '100px',  // Increased size to match sketch
-            height: '100px', // Increased size to match sketch
-            objectFit: 'cover'
-          }}
-        />
-      </div>
+  width: '120px',
+  display: 'flex', 
+  alignItems: 'center',
+  padding: '0.25rem',
+  position: 'relative'  // Added for Next Image component
+}}>
+  <Image 
+    src={`/KPM-cover-green-front.jpg`}
+    alt="KPM Album"
+    width={100}
+    height={100}
+    style={{ 
+      objectFit: 'cover'
+    }}
+  />
+</div>
       <div style={{ width: '100px', color: '#FFD700' }}>{album.number}</div>
       <div style={{ flex: 1, color: 'white' }}>{album.title}</div>
       <div style={{ width: '80px', color: '#FFD700', textAlign: 'right' }}>{album.year}</div>
