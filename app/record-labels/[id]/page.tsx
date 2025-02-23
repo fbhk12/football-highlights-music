@@ -96,8 +96,8 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
                   <Image
                     src="/KPM-cover-green-front.jpg"
                     alt="KPM Album"
-                    width={80}
-                    height={80}
+                    width={60}
+                    height={60}
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
