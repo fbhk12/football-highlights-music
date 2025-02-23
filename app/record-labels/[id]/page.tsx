@@ -21,14 +21,16 @@ const kpmAlbums = [
 ];
 
 export default function RecordLabelPage({ params }: RecordLabelPageProps) {
+  const mainStyle = {
+    minHeight: '100vh',
+    background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    padding: '2rem'
+  };
+
   return (
-    <main style={{
-      minHeight: '100vh',
-      background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      padding: '2rem'
-    }}>
+    <main style={mainStyle}>
       <div className="max-w-6xl mx-auto">
         <button 
           onClick={() => window.history.back()}
@@ -52,59 +54,62 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
           }} className="text-2xl font-bold">
             Albums With FHM Songs
           </h2>
+          
+          {/* Column Headers */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0.5rem 1rem',
+            color: '#FFD700',
+            fontWeight: 'bold',
+            borderBottom: '1px solid #FFD700',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          }}>
+            <div style={{ width: '120px' }}></div>
+            <div style={{ width: '100px' }}>Album #</div>
+            <div style={{ flex: 1 }}>Name</div>
+            <div style={{ width: '80px', textAlign: 'right' }}>Released</div>
+            <div style={{ width: '50px', textAlign: 'right' }}># Of FHM Songs</div>
+          </div>
 
-        {/* Column Headers */}
-<div style={{
-  display: 'flex',
-  alignItems: 'center',
-  padding: '0.5rem 1rem',
-  color: '#FFD700',
-  fontWeight: 'bold',
-  borderBottom: '1px solid #FFD700',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-}}>
-  <div style={{ width: '120px' }}></div> {/* Increased to match new thumbnail width */}
-  <div style={{ width: '100px' }}>Album #</div>
-  <div style={{ flex: 1 }}>Name</div>
-  <div style={{ width: '80px', textAlign: 'right' }}>Released</div>
-  <div style={{ width: '50px', textAlign: 'right' }}># Of FHM Songs</div>
-</div>
-
-{/* Album Rows */}
-<div>
-  {kpmAlbums.map((album) => (
-    <div 
-      key={album.number}
-      style={{
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        padding: '0.25rem 1rem',
-        display: 'flex',
-        alignItems: 'center',
-        borderBottom: '1px solid rgba(255, 215, 0, 0.1)',
-        minHeight: '100px' // Increased to accommodate larger thumbnail
-      }}
-    >
-      <div style={{ 
-  width: '120px',
-  display: 'flex', 
-  alignItems: 'center',
-  padding: '0.25rem',
-  position: 'relative'  // Added for Next Image component
-}}>
-  <Image 
-    src={`/KPM-cover-green-front.jpg`}
-    alt="KPM Album"
-    width={100}
-    height={100}
-    style={{ 
-      objectFit: 'cover'
-    }}
-  />
-</div>
-      <div style={{ width: '100px', color: '#FFD700' }}>{album.number}</div>
-      <div style={{ flex: 1, color: 'white' }}>{album.title}</div>
-      <div style={{ width: '80px', color: '#FFD700', textAlign: 'right' }}>{album.year}</div>
-      <div style={{ width: '50px', color: 'white', textAlign: 'right' }}>{album.fhmSongs}</div>
-    </div>
-  ))}
-</div>
+          {/* Album Rows */}
+          <div>
+            {kpmAlbums.map((album) => (
+              <div 
+                key={album.number}
+                style={{
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  padding: '0.25rem 1rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  borderBottom: '1px solid rgba(255, 215, 0, 0.1)',
+                  minHeight: '100px'
+                }}
+              >
+                <div style={{ 
+                  width: '120px',
+                  display: 'flex', 
+                  alignItems: 'center',
+                  padding: '0.25rem',
+                  position: 'relative'
+                }}>
+                  <Image
+                    src="/KPM-cover-green-front.jpg"
+                    alt="KPM Album"
+                    width={100}
+                    height={100}
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                <div style={{ width: '100px', color: '#FFD700' }}>{album.number}</div>
+                <div style={{ flex: 1, color: 'white' }}>{album.title}</div>
+                <div style={{ width: '80px', color: '#FFD700', textAlign: 'right' }}>{album.year}</div>
+                <div style={{ width: '50px', color: 'white', textAlign: 'right' }}>{album.fhmSongs}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
