@@ -90,7 +90,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
         padding: '0.25rem'
       }}>
         <img 
-          src="/kpm-album-cover.jpg" 
+          src="/KPM - cover - green - front.jpg" 
           alt="KPM Album"
           style={{ 
             width: '100px',  // Increased size to match sketch
