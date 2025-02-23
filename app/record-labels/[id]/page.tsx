@@ -69,7 +69,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   <div style={{ width: '50px', textAlign: 'right' }}># Of FHM Songs</div>
 </div>
 
-         {/* Album Rows */}
+{/* Album Rows */}
 <div>
   {kpmAlbums.map((album) => (
     <div 
@@ -106,10 +106,3 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
     </div>
   ))}
 </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </main>
-  );
-}
