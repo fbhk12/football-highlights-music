@@ -52,7 +52,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             Albums With FHM Songs
           </h2>
 
-          {/* Column Headers */}
+        {/* Column Headers */}
 <div style={{
   display: 'flex',
   alignItems: 'center',
