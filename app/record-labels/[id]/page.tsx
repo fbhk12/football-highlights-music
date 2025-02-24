@@ -119,7 +119,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
                       position: 'relative'
                     }}>
                       <Image
-                        src="/KPM-cover-green-front.jpg"
+                        src="/Images-AlbumCovers/KPM-cover-green-front.jpg"
                         alt="KPM Album"
                         width={70}
                         height={70}
