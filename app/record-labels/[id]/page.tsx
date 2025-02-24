@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type RecordLabelPageProps = {
   params: {
@@ -21,6 +22,23 @@ const kpmAlbums = [
 ];
 
 export default function RecordLabelPage({ params }: RecordLabelPageProps) {
+  const getLabelName = (id: string) => {
+    switch(id) {
+      case 'kpm': return 'KPM';
+      case 'de-wolfe': return 'De Wolfe';
+      case 'sylvester': return 'Sylvester';
+      case 'chappell': return 'Chappell';
+      case 'standard-music-library': return 'Standard Music Library';
+      case 'sam-fox': return 'Sam Fox';
+      case 'impress': return 'Impress';
+      case 'berry-music': return 'Berry Music';
+      case 'nfl-films': return 'NFL Films';
+      default: return '';
+    }
+  };
+
+  const labelName = getLabelName(params.id);
+
   return (
     <main style={{
       minHeight: '100vh',
@@ -50,7 +68,7 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
             padding: '0.5rem 1rem',
             marginBottom: 0
           }} className="text-2xl font-bold">
-            Albums With FHM Songs
+            {labelName} Albums With FHM Songs
           </h2>
 
           {/* Two-Column Layout Container */}
@@ -107,10 +125,36 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
                         style={{ objectFit: 'cover' }}
                       />
                     </div>
-                    <div style={{ width: '100px', marginRight: '15px', color: '#FFD700' }}>{album.number}</div>
-                    <div style={{ width: '200px', marginRight: '15px', color: 'white' }}>{album.title}</div>
-                    <div style={{ width: '80px', marginRight: '15px', color: '#FFD700' }}>{album.year}</div>
-                    <div style={{ width: '80px', color: 'white', textAlign: 'center' }}>{album.fhmSongs}</div>
+                    <Link href={`/albums/${album.number.toLowerCase()}`} style={{ 
+                      width: '100px', 
+                      marginRight: '15px', 
+                      color: '#FFD700',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    }}>
+                      {album.number}
+                    </Link>
+                    <Link href={`/albums/${album.number.toLowerCase()}`} style={{ 
+                      width: '200px', 
+                      marginRight: '15px', 
+                      color: 'white',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    }}>
+                      {album.title}
+                    </Link>
+                    <Link href={`/years/${album.year}`} style={{ 
+                      width: '80px', 
+                      marginRight: '15px', 
+                      color: '#FFD700',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    }}>
+                      {album.year}
+                    </Link>
+                    <div style={{ width: '80px', color: 'white', textAlign: 'center' }}>
+                      {album.fhmSongs}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -164,10 +208,36 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
                         style={{ objectFit: 'cover' }}
                       />
                     </div>
-                    <div style={{ width: '100px', marginRight: '15px', color: '#FFD700' }}>{album.number}</div>
-                    <div style={{ width: '200px', marginRight: '15px', color: 'white' }}>{album.title}</div>
-                    <div style={{ width: '80px', marginRight: '15px', color: '#FFD700' }}>{album.year}</div>
-                    <div style={{ width: '80px', color: 'white', textAlign: 'center' }}>{album.fhmSongs}</div>
+                    <Link href={`/albums/${album.number.toLowerCase()}`} style={{ 
+                      width: '100px', 
+                      marginRight: '15px', 
+                      color: '#FFD700',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    }}>
+                      {album.number}
+                    </Link>
+                    <Link href={`/albums/${album.number.toLowerCase()}`} style={{ 
+                      width: '200px', 
+                      marginRight: '15px', 
+                      color: 'white',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    }}>
+                      {album.title}
+                    </Link>
+                    <Link href={`/years/${album.year}`} style={{ 
+                      width: '80px', 
+                      marginRight: '15px', 
+                      color: '#FFD700',
+                      cursor: 'pointer',
+                      textDecoration: 'none'
+                    }}>
+                      {album.year}
+                    </Link>
+                    <div style={{ width: '80px', color: 'white', textAlign: 'center' }}>
+                      {album.fhmSongs}
+                    </div>
                   </div>
                 ))}
               </div>
