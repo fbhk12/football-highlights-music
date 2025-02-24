@@ -62,14 +62,15 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
         </button>
         
         <div style={{ border: '2px solid #FFD700' }} className="rounded-lg overflow-hidden">
-          <h2 style={{ 
-            color: '#FFD700',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            padding: '0.5rem 1rem',
-            marginBottom: 0
-          }} className="text-2xl font-bold">
-            {labelName} Albums With FHM Songs
-          </h2>
+         <h2 style={{ 
+  color: '#FFD700',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  padding: '0.5rem 1rem',
+  marginBottom: 0,
+  textAlign: 'center'  // Add this line
+}} className="text-2xl font-bold">
+  {labelName} Albums With FHM Songs
+</h2>
 
           {/* Two-Column Layout Container */}
           <div style={{
