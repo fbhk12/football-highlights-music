@@ -123,7 +123,17 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   // Use the dynamic data
   const albums = currentLabel.albums;
   const coverImage = currentLabel.coverImage;
+  const labelName = getLabelName(params.id);
+  
+// Get the current label's data
+const currentLabel = labelData[params.id as keyof typeof labelData] || { 
+  albums: [], 
+  coverImage: "/Images-AlbumCovers/KPM-cover-green-front.jpg" 
+};
 
+// Use the dynamically selected label's albums
+const albums = currentLabel.albums;
+const coverImage = currentLabel.coverImage;
   return (
     <main style={{
       minHeight: '100vh',
