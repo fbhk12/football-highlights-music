@@ -49,6 +49,7 @@ export default function RecordLabels() {
           marginBottom: '2rem',
           lineHeight: '1.6',
           fontSize: '1.1rem'
+          textAlign: 'center',
         }}>
           The record labels that produced albums containing songs used in football highlight films from 1966-1979.
         </p>
@@ -71,6 +72,7 @@ export default function RecordLabels() {
                 borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                 transition: 'all 0.3s ease',
                 fontSize: '1.2rem'
+                textAlign: 'center',
               }}
               className="hover:bg-yellow-900/50 hover:pl-6"
             >
