@@ -21,14 +21,19 @@ const recordLabels = [
 ];
 
 export default function RecordLabels() {
+  // Using a style object to avoid JSX syntax issues
+  const mainStyle = {
+    minHeight: '100vh',
+    background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    padding: '2rem'
+  };
   return (
-    <main style={{
-      minHeight: '100vh',
-      background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      padding: '2rem',
-    }}>
+    <main style={mainStyle}>
+      <div className="container mx-auto">
+        <h1 className="text-4xl text-center text-[#FFD700] mb-8">Record Labels</h1>
+        {/* Your record label links go here */}
       <div className="max-w-4xl mx-auto">
         {/* Page Title */}
         <h1 className={oswald.className} style={{
