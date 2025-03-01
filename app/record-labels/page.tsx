@@ -38,7 +38,7 @@ export default function RecordLabels() {
         {/* Page Title */}
         <h1 className={oswald.className} style={{
           fontSize: '2.5rem',
-          color: colors.nflGold,
+          color: '#FFD700',  // Replaced colors.nflGold with direct hex value
           textAlign: 'center',
           marginBottom: '2rem',
           textTransform: 'uppercase',
@@ -53,7 +53,7 @@ export default function RecordLabels() {
           color: 'white',
           marginBottom: '2rem',
           lineHeight: '1.6',
-          fontSize: '1.1rem'
+          fontSize: '1.1rem',
           textAlign: 'center',
         }}>
           The record labels that produced albums containing songs used in football highlight films from 1966-1979.
