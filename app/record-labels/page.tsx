@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { CSSProperties } from 'react';
 
 export default function RecordLabels() {
   // Define the labels data
@@ -15,8 +16,8 @@ export default function RecordLabels() {
     { name: 'NFL Films', id: 'nfl-films' }
   ];
 
-  // Define main style outside JSX
-  const mainStyle = {
+  // Define styles with proper type annotations
+  const mainStyle: CSSProperties = {
     minHeight: '100vh',
     background: "linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')",
     backgroundSize: 'cover',
@@ -24,8 +25,7 @@ export default function RecordLabels() {
     padding: '2rem'
   };
 
-  // Define heading style
-  const headingStyle = {
+  const headingStyle: CSSProperties = {
     fontSize: '2.5rem',
     color: '#FFD700',
     textAlign: 'center',
@@ -35,25 +35,22 @@ export default function RecordLabels() {
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)'
   };
 
-  // Define paragraph style
-  const paragraphStyle = {
+  const paragraphStyle: CSSProperties = {
     color: 'white',
     marginBottom: '2rem',
-    lineHeight: '1.6',
+    lineHeight: 1.6,
     fontSize: '1.1rem',
     textAlign: 'center'
   };
 
-  // Define container style
-  const containerStyle = {
+  const containerStyle: CSSProperties = {
     backgroundColor: 'rgba(0, 0, 0, 0.7)',
     padding: '2rem',
     borderRadius: '8px',
     border: '1px solid #FFD700'
   };
 
-  // Define link style
-  const linkStyle = {
+  const linkStyle: CSSProperties = {
     display: 'block',
     color: 'white',
     padding: '1rem',
