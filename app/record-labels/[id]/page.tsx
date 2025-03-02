@@ -55,6 +55,15 @@ const labelData = {
     ],
     coverImage: "/Images-AlbumCovers/Capitol-cover-aqua-front.jpg" // Update if you have a specific Chappell image
   },
+  'capitol-production-music': {
+  albums: [
+    { number: "CPM 101", title: "Contemporary Action", year: 1969, fhmSongs: 5 },
+    { number: "CPM 108", title: "Dramatic Underscore", year: 1970, fhmSongs: 4 },
+    { number: "CPM 115", title: "Sports Highlights", year: 1971, fhmSongs: 7 },
+    { number: "CPM 120", title: "Electronic Textures", year: 1972, fhmSongs: 3 }
+    ],
+  coverImage: "/Images-AlbumCovers/Capitol-cover-aqua-front.jpg"
+  },
   'standard-music-library': {
     albums: [
       { number: "SML 101", title: "Orchestral Themes", year: 1967, fhmSongs: 5 },
@@ -99,19 +108,20 @@ const labelData = {
 
 export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   const getLabelName = (id: string) => {
-    switch(id) {
-      case 'kpm': return 'KPM';
-      case 'de-wolfe': return 'De Wolfe';
-      case 'sylvester': return 'Sylvester';
-      case 'chappell': return 'Chappell';
-      case 'standard-music-library': return 'Standard Music Library';
-      case 'sam-fox': return 'Sam Fox';
-      case 'impress': return 'Impress';
-      case 'berry-music': return 'Berry Music';
-      case 'nfl-films': return 'NFL Films';
-      default: return '';
-    }
-  };
+  switch(id) {
+    case 'kpm': return 'KPM';
+    case 'de-wolfe': return 'De Wolfe';
+    case 'sylvester': return 'Sylvester';
+    case 'chappell': return 'Chappell';
+    case 'capitol-production-music': return 'Capitol Production Music';
+    case 'standard-music-library': return 'Standard Music Library';
+    case 'sam-fox': return 'Sam Fox';
+    case 'impress': return 'Impress';
+    case 'berry-music': return 'Berry Music';
+    case 'nfl-films': return 'NFL Films';
+    default: return '';
+  }
+};
 
   // Get the current label based on the URL parameter
   const labelId = params.id;
