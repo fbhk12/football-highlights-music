@@ -121,30 +121,34 @@ export default function RecordLabels() {
     border: '1px solid #FFD700'
   };
 
-  const headerRowStyle: CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 120px 120px',
-    padding: '0.5rem 1rem',
-    borderBottom: '1px solid #FFD700',
-    color: '#FFD700',
-    fontWeight: 'bold',
-    fontSize: '1.1rem'
-  };
+ const headerRowStyle: CSSProperties = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)', // Equal width columns
+  gap: '40px', // Equal spacing between columns
+  padding: '0.5rem 1rem',
+  borderBottom: '1px solid #FFD700',
+  color: '#FFD700',
+  fontWeight: 'bold',
+  fontSize: '1.1rem',
+  textAlign: 'center' // Center all header text
+};
 
-  const linkRowStyle: CSSProperties = {
-    display: 'grid',
-    gridTemplateColumns: '1fr 120px 120px',
-    padding: '1rem',
-    borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-    transition: 'all 0.3s ease',
-    alignItems: 'center'
-  };
+const linkRowStyle: CSSProperties = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)', // Equal width columns
+  gap: '40px', // Equal spacing between columns
+  padding: '1rem',
+  borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+  transition: 'all 0.3s ease',
+  alignItems: 'center'
+};
 
-  const linkStyle: CSSProperties = {
-    color: 'white',
-    textDecoration: 'none',
-    fontSize: '1.2rem'
-  };
+const linkStyle: CSSProperties = {
+  color: 'white',
+  textDecoration: 'none',
+  fontSize: '1.2rem',
+  textAlign: 'center' // Center the label name
+};
 
   const statStyle: CSSProperties = {
     color: '#FFD700',
