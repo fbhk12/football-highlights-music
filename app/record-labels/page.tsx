@@ -5,16 +5,17 @@ import { CSSProperties } from 'react';
 export default function RecordLabels() {
   // Define the labels data
   const recordLabels = [
-    { name: 'KPM', id: 'kpm' },
-    { name: 'De Wolfe', id: 'de-wolfe' },
-    { name: 'Sylvester', id: 'sylvester' },
-    { name: 'Chappell', id: 'chappell' },
-    { name: 'Standard Music Library', id: 'standard-music-library' },
-    { name: 'Sam Fox', id: 'sam-fox' },
-    { name: 'Impress', id: 'impress' },
-    { name: 'Berry Music', id: 'berry-music' },
-    { name: 'NFL Films', id: 'nfl-films' }
-  ];
+  { name: 'KPM', id: 'kpm' },
+  { name: 'De Wolfe', id: 'de-wolfe' },
+  { name: 'Sylvester', id: 'sylvester' },
+  { name: 'Chappell', id: 'chappell' },
+  { name: 'Capitol Production Music', id: 'capitol-production-music' },
+  { name: 'Standard Music Library', id: 'standard-music-library' },
+  { name: 'Sam Fox', id: 'sam-fox' },
+  { name: 'Impress', id: 'impress' },
+  { name: 'Berry Music', id: 'berry-music' },
+  { name: 'NFL Films', id: 'nfl-films' }
+];
 
   // Define styles with proper type annotations
   const mainStyle: CSSProperties = {
