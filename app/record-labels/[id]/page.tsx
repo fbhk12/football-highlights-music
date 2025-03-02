@@ -1,4 +1,5 @@
 'use client';
+import { labelData } from './labelData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { CSSProperties } from 'react';
