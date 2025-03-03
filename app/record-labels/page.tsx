@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CSSProperties } from 'react';
 
 // Import the label data to calculate statistics
-import { labelData } from './[id]/labelData'; // You'll need to extract the data to a separate file
+import { labelData } from './labelData'; // Import from same directory
 
 export default function RecordLabels() {
   // Calculate statistics for each label
