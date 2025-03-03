@@ -124,7 +124,7 @@ export default function RecordLabels() {
  const headerRowStyle: CSSProperties = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)', // Equal width columns
-  gap: '40px', // Equal spacing between columns
+  gap: '20px', // Equal spacing between columns
   padding: '0.5rem 1rem',
   borderBottom: '1px solid #FFD700',
   color: '#FFD700',
