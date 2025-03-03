@@ -10,7 +10,6 @@ type RecordLabelPageProps = {
   };
 };
 
-
 export default function RecordLabelPage({ params }: RecordLabelPageProps) {
   const getLabelName = (id: string) => {
   switch(id) {
