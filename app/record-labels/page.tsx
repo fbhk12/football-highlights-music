@@ -121,26 +121,30 @@ export default function RecordLabels() {
     border: '1px solid #FFD700'
   };
 
- const headerRowStyle: CSSProperties = {
+const headerRowStyle: CSSProperties = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)', // Equal width columns
-  gap: '20px', // Equal spacing between columns
+  gap: '20px', // Reduced from 40px to 20px
   padding: '0.5rem 1rem',
   borderBottom: '1px solid #FFD700',
   color: '#FFD700',
   fontWeight: 'bold',
   fontSize: '1.1rem',
-  textAlign: 'center' // Center all header text
+  textAlign: 'center',
+  maxWidth: '800px', // Add this to constrain width
+  margin: '0 auto' // Add this to center the grid
 };
 
 const linkRowStyle: CSSProperties = {
   display: 'grid',
   gridTemplateColumns: 'repeat(3, 1fr)', // Equal width columns
-  gap: '40px', // Equal spacing between columns
+  gap: '20px', // Reduced from 40px to 20px
   padding: '1rem',
   borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
   transition: 'all 0.3s ease',
-  alignItems: 'center'
+  alignItems: 'center',
+  maxWidth: '800px', // Add this to constrain width
+  margin: '0 auto' // Add this to center the grid
 };
 
 const linkStyle: CSSProperties = {
