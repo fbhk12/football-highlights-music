@@ -154,11 +154,12 @@ const linkStyle: CSSProperties = {
   textAlign: 'center' // Center the label name
 };
 
-  const statStyle: CSSProperties = {
-    color: '#FFD700',
-    fontWeight: 'bold',
-    textAlign: 'center'
-  };
+const statStyle: CSSProperties = {
+  color: '#FFD700',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  fontSize: '1.3rem'  // Increase from default size
+};
 
   return (
     <div style={mainStyle}>
