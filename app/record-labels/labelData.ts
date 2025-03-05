@@ -34,7 +34,7 @@ export const labelData = {
       { number: "DW 2058", title: "Documentary Music", year: 1971, fhmSongs: 6 },
       { number: "DW 2063", title: "Athletics & Action", year: 1972, fhmSongs: 7 }
     ],
-    coverImage: "/Images-AlbumCovers/de-wolfe-cover.jpg"
+    coverImage: "/Images-AlbumCovers/DW-cover-rwb-front.jpg"
   },
   'sylvester': {
     albums: [
@@ -43,7 +43,7 @@ export const labelData = {
       { number: "SYL 923", title: "Dramatic Moods", year: 1969, fhmSongs: 3 },
       { number: "SYL 930", title: "Sports Themes", year: 1970, fhmSongs: 7 }
     ],
-    coverImage: "/Images-AlbumCovers/sylvester-cover.jpg"
+    coverImage: "/Images-AlbumCovers/Sylvester-cover-tophalf-front.jpg"
   },
   'chappell': {
     albums: [
@@ -52,7 +52,7 @@ export const labelData = {
       { number: "CH 46", title: "Electronic Textures", year: 1968, fhmSongs: 3 },
       { number: "CH 57", title: "Sports Activities", year: 1969, fhmSongs: 8 }
     ],
-    coverImage: "/Images-AlbumCovers/chappell-cover.jpg"
+    coverImage: "/Images-AlbumCovers/Chappell-cover-yellow-front.jpg"
   },
   'standard-music-library': {
     albums: [
@@ -60,7 +60,7 @@ export const labelData = {
       { number: "SML 118", title: "Modern Sounds", year: 1968, fhmSongs: 6 },
       { number: "SML 125", title: "Sports & Action", year: 1969, fhmSongs: 7 }
     ],
-    coverImage: "/Images-AlbumCovers/standard-music-library-cover.jpg"
+    coverImage: "/Images-AlbumCovers/Standard-cover-orangefilm-front.jpg"
   },
   'sam-fox': {
     albums: [
@@ -68,7 +68,7 @@ export const labelData = {
       { number: "SF 5012", title: "Orchestral Settings", year: 1966, fhmSongs: 4 },
       { number: "SF 5023", title: "Background Textures", year: 1968, fhmSongs: 3 }
     ],
-    coverImage: "/Images-AlbumCovers/sam-fox-cover.jpg"
+    coverImage: "/Images-AlbumCovers/SamFox-cover-gray-front.jpg"
   },
   'impress': {
     albums: [
@@ -76,7 +76,7 @@ export const labelData = {
       { number: "IMP 725", title: "Modern Scoring", year: 1970, fhmSongs: 4 },
       { number: "IMP 741", title: "Suspense Themes", year: 1972, fhmSongs: 3 }
     ],
-    coverImage: "/Images-AlbumCovers/impress-cover.jpg"
+    coverImage: "/Images-AlbumCovers/Impress-cover-tan-front.jpg"
   },
   'berry-music': {
     albums: [
@@ -84,7 +84,7 @@ export const labelData = {
       { number: "BM 425", title: "Contemporary Backgrounds", year: 1969, fhmSongs: 4 },
       { number: "BM 437", title: "Dramatic Settings", year: 1971, fhmSongs: 3 }
     ],
-    coverImage: "/Images-AlbumCovers/berry-music-cover.jpg"
+    coverImage: "/Images-AlbumCovers/BerryConroy-cover-orange-front.jpg"
   },
   'nfl-films': {
     albums: [
@@ -92,7 +92,7 @@ export const labelData = {
       { number: "NFL 1002", title: "NFL Films Music Vol. 2", year: 1975, fhmSongs: 14 },
       { number: "NFL 1003", title: "NFL Films Music Vol. 3", year: 1977, fhmSongs: 10 }
     ],
-    coverImage: "/Images-AlbumCovers/nfl-films-cover.jpg"
+    coverImage: "/Images-AlbumCovers/NFLF-cover-whiterect-front.jpg"
   }
 };
 
