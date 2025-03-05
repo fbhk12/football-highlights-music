@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { CSSProperties, useState } from 'react';
-import { songData } from './songData'; // We'll create this file next
+import { songData } from './songData.ts';
 
 export default function Songs() {
   const [searchTerm, setSearchTerm] = useState('');
