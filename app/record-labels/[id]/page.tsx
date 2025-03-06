@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { CSSProperties } from 'react';
 import { labelData } from '../labelData'; // Import from parent directory
+console.log('labelData imported:', labelData);
 
 type RecordLabelPageProps = {
   params: {
