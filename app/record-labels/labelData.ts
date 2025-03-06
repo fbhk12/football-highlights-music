@@ -120,8 +120,5 @@ export default function RecordLabelPage({ params }: RecordLabelPageProps) {
     coverImage: "/Images-AlbumCovers/KPM-cover-green-front.jpg" // Default image as fallback
   };
   
-  // Use the dynamic data
-  const albums = currentLabel.albums;
-  const coverImage = currentLabel.coverImage;
-
+ 
  
