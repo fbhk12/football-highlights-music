@@ -85,29 +85,3 @@ export const labelData = {
   }
 };
 
-export default function RecordLabelPage({ params }: RecordLabelPageProps) {
-  const getLabelName = (id: string) => {
-    switch(id) {
-      case 'kpm': return 'KPM';
-      case 'de-wolfe': return 'De Wolfe';
-      case 'sylvester': return 'Sylvester';
-      case 'chappell': return 'Chappell';
-      case 'standard-music-library': return 'Standard Music Library';
-      case 'sam-fox': return 'Sam Fox';
-      case 'impress': return 'Impress';
-      case 'berry-music': return 'Berry Music';
-      case 'nfl-films': return 'NFL Films';
-      default: return '';
-    }
-  };
-
-  const labelName = getLabelName(params.id);
-  
-  // Get the current label's data
-  const currentLabel = labelData[params.id as keyof typeof labelData] || { 
-    albums: [], 
-    coverImage: "/Images-AlbumCovers/KPM-cover-green-front.jpg" // Default image as fallback
-  };
-  
- 
- 
