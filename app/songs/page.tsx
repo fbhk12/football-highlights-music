@@ -91,6 +91,23 @@ export default function SongsPage() {
       padding: '2rem'
     }}>
       <div className="max-w-6xl mx-auto">
+        <Link 
+          href="/"
+          style={{
+            display: 'inline-block',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            color: '#FFD700',
+            padding: '0.5rem 1rem',
+            marginBottom: '1rem',
+            borderRadius: '0.25rem',
+            cursor: 'pointer',
+            textDecoration: 'none',
+            border: 'none'
+          }}
+        >
+          ← Back to Home
+        </Link>
+        
         <div style={{ border: '2px solid #FFD700', borderRadius: '8px', overflow: 'hidden' }}>
           <h2 style={{ 
             color: '#FFD700',
