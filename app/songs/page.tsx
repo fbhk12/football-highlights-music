@@ -192,10 +192,11 @@ export default function SongsPage() {
                   background: 'none',
                   color: '#FFD700',
                   fontWeight: 'bold',
-                  textAlign: 'left',
+                  textAlign: 'center',
                   cursor: 'pointer',
                   display: 'flex',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  justifyContent: 'center'
                 }}
               >
                 Year <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('year')}</span>
