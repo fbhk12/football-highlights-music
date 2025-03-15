@@ -43,7 +43,7 @@ export default function SongPage({ params }: SongPageProps) {
             borderRadius: '8px'
           }}>
             <h2 style={{ color: '#FFD700', fontSize: '1.5rem', marginBottom: '1rem' }}>Song Not Found</h2>
-            <p>The song you're looking for could not be found.</p>
+            <p>The song you&apos;re looking for could not be found.</p>
             <Link href="/songs" style={{ 
               display: 'inline-block',
               margin: '1rem 0',
