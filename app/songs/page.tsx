@@ -13,6 +13,9 @@ type SortConfig = {
 const SONGS_PER_PAGE = 20;
 
 export default function SongsPage() {
+  // State for search query
+  const [searchQuery, setSearchQuery] = useState('');
+  
   // State for pagination
   const [currentPage, setCurrentPage] = useState(1);
   
@@ -22,11 +25,33 @@ export default function SongsPage() {
     direction: 'ascending'
   });
   
-  // State for sorted and paginated songs
+  // State for filtered songs
+  const [filteredSongs, setFilteredSongs] = useState<Song[]>(songsData);
+  
+  // State for displayed (paginated) songs
   const [displayedSongs, setDisplayedSongs] = useState<Song[]>([]);
   
   // Calculate total pages
-  const totalPages = Math.ceil(songsData.length / SONGS_PER_PAGE);
+  const totalPages = Math.ceil(filteredSongs.length / SONGS_PER_PAGE);
+
+  // Filter songs based on search query
+  useEffect(() => {
+    if (!searchQuery.trim()) {
+      setFilteredSongs(songsData);
+    } else {
+      const query = searchQuery.toLowerCase().trim();
+      const filtered = songsData.filter(song => 
+        song.title.toLowerCase().includes(query) ||
+        song.artist.toLowerCase().includes(query) ||
+        song.album.toLowerCase().includes(query) ||
+        song.label.toLowerCase().includes(query) ||
+        String(song.year).includes(query)
+      );
+      setFilteredSongs(filtered);
+    }
+    // Reset to first page when search query changes
+    setCurrentPage(1);
+  }, [searchQuery]);
 
   // Handle sort request
   const requestSort = (key: keyof Song) => {
@@ -48,10 +73,10 @@ export default function SongsPage() {
     return sortConfig.direction === 'ascending' ? '↑' : '↓';
   };
   
-  // Update displayed songs when sort config or page changes
+  // Update displayed songs when sort config, filtered songs, or page changes
   useEffect(() => {
-    // Create a copy of the songs array to avoid mutating the original
-    const sortedSongs = [...songsData].sort((a, b) => {
+    // Create a copy of the filtered songs array to avoid mutating the original
+    const sortedSongs = [...filteredSongs].sort((a, b) => {
       // Handle special case for year (numeric sort)
       if (sortConfig.key === 'year') {
         return sortConfig.direction === 'ascending' 
@@ -77,10 +102,20 @@ export default function SongsPage() {
     const indexOfFirstSong = indexOfLastSong - SONGS_PER_PAGE;
     setDisplayedSongs(sortedSongs.slice(indexOfFirstSong, indexOfLastSong));
     
-  }, [sortConfig, currentPage]);
+  }, [sortConfig, filteredSongs, currentPage]);
 
   // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  // Handle search input change
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+  
+  // Clear search
+  const clearSearch = () => {
+    setSearchQuery('');
+  };
   
   return (
     <main style={{
@@ -121,8 +156,61 @@ export default function SongsPage() {
             Football Highlights Music Songs
           </h2>
 
+          {/* Search Bar */}
+          <div style={{
+            padding: '1rem',
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              width: '100%',
+              maxWidth: '500px',
+              position: 'relative'
+            }}>
+              <input
+                type="text"
+                placeholder="Search songs, artists, albums..."
+                value={searchQuery}
+                onChange={handleSearchChange}
+                style={{
+                  padding: '0.5rem 2.5rem 0.5rem 0.75rem',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                  color: 'white',
+                  border: '1px solid #FFD700',
+                  borderRadius: '4px',
+                  width: '100%',
+                  fontSize: '0.9rem'
+                }}
+              />
+              {searchQuery && (
+                <button
+                  onClick={clearSearch}
+                  style={{
+                    position: 'absolute',
+                    right: '8px',
+                    background: 'none',
+                    border: 'none',
+                    color: '#FFD700',
+                    cursor: 'pointer',
+                    fontSize: '1rem',
+                    padding: '0.25rem'
+                  }}
+                >
+                  ×
+                </button>
+              )}
+            </div>
+            <div style={{ color: 'white', marginLeft: '1rem' }}>
+              Showing {Math.min(filteredSongs.length, displayedSongs.length)} of {filteredSongs.length} songs
+            </div>
+          </div>
+
           {/* Table Container */}
-          <div style={{ padding: '1rem' }}>
+          <div style={{ padding: '0 1rem 1rem' }}>
             {/* Column Headers */}
             <div style={{
               display: 'flex',
@@ -271,7 +359,10 @@ export default function SongsPage() {
                       width: '12%', 
                       color: 'white',
                       textDecoration: 'none',
-                      textAlign: 'center'
+                      textAlign: 'center',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
                     }}>
                       {song.year}
                     </Link>
@@ -286,7 +377,7 @@ export default function SongsPage() {
                     color: 'white'
                   }}
                 >
-                  No songs found to display
+                  {searchQuery ? `No songs found matching "${searchQuery}"` : "No songs found to display"}
                 </div>
               )}
             </div>
