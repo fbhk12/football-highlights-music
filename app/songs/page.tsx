@@ -384,7 +384,8 @@ export default function SongsPage() {
               Showing {Math.min(filteredSongs.length, displayedSongs.length)} of {filteredSongs.length} songs
             </div>
           </div>
-
+         </ResponsiveLayout>
+  
           {/* Table Container */}
           <div style={{ padding: isMobileView ? '0.5rem' : '0 1rem 1rem' }}>
             {/* Loading Indicator */}
