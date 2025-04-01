@@ -2,8 +2,6 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Song, songsData } from '../songsData';
-import { useState, useEffect } from 'react';
-import { Song, songsData } from '../songsData';
 import ResponsiveLayout from '../components/ResponsiveLayout';
 import { useWindowSize, useLoading, ResponsiveRenderer } from '../utils/responsive-utils';
 
@@ -18,6 +16,9 @@ type SortConfig = {
 const SONGS_PER_PAGE = 20;
 
 export default function SongsPage() {
+  const { isMobile } = useWindowSize();
+  const { isLoading, startLoading } = useLoading();
+
   // State for loading
   const [isLoading, setIsLoading] = useState(true);
 
