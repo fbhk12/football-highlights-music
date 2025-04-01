@@ -1,17 +1,274 @@
-.main-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('https://raw.githubusercontent.com/fbhk12/nfl-films-music/main/public/lambeau68.jpg') center center;
-  background-size: cover;
-  opacity: 0.2;
-  z-index: -1;
+/* globals.css - Place this in your app directory */
+
+:root {
+  /* Color variables */
+  --primary-color: #FFD700; /* Gold */
+  --text-light: #FFFFFF;
+  --text-highlight: #FFD700;
+  --bg-dark: rgba(0, 0, 0, 0.8);
+  --bg-medium: rgba(0, 0, 0, 0.5);
+  --bg-light: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 215, 0, 0.3);
+
+  /* Spacing variables */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
 }
 
-.content {
+/* Global styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #121212;
+  color: var(--text-light);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Container utils */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Background patterns */
+.bg-football {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+              url('/Lambeau68-1024x690.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* Card and panel styles */
+.content-card {
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--bg-medium);
+  margin-bottom: var(--spacing-lg);
+}
+
+.card-header {
+  background-color: var(--bg-medium);
+  color: var(--primary-color);
+  padding: var(--spacing-md);
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--text-xl);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.card-content {
+  padding: var(--spacing-md);
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-medium);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--text-base);
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.btn-back {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Table styles */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-header {
+  display: flex;
+  background-color: var(--bg-medium);
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.table-row {
+  display: flex;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-medium);
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: rgba(25, 25, 25, 0.7);
+}
+
+.table-cell {
+  flex: 1;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Search input */
+.search-container {
   position: relative;
-  z-index: 1;
-  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-sm) var(--spacing-sm);
+  background-color: var(--bg-medium);
+  color: var(--text-light);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  font-size: var(--text-sm);
+}
+
+.search-clear {
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: var(--text-lg);
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: var(--spacing-md);
+  gap: var(--spacing-xs);
+}
+
+.pagination-btn {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--bg-medium);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.pagination-btn.active {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--primary-color);
+  font-size: var(--text-lg);
+}
+
+/* Responsive card layout for mobile */
+.mobile-card {
+  padding: var(--spacing-md);
+  background-color: var(--bg-medium);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobile-card-title {
+  font-size: var(--text-lg);
+  color: var(--text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobile-card-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-xs);
+  font-size: var(--text-sm);
+}
+
+.mobile-card-label {
+  color: var(--primary-color);
+  width: 35%;
+}
+
+.mobile-card-value {
+  width: 65%;
+  text-align: right;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .card-header {
+    font-size: var(--text-lg);
+    padding: var(--spacing-sm);
+  }
+  
+  .btn {
+    font-size: var(--text-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .table-header, .table-row {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .pagination-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--text-sm);
+    min-width: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-content {
+    padding: var(--spacing-sm);
+  }
+  
+  .mobile-card {
+    padding: var(--spacing-sm);
+  }
+  
+  .mobile-card-title {
+    font-size: var(--text-base);
+  }
+  
+  .search-input {
+    font-size: var(--text-xs);
+  }
 }
