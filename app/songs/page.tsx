@@ -330,43 +330,7 @@ export default function SongsPage() {
     </div>
   );
   
-  return (
-    <main style={{
-      minHeight: '100vh',
-      background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/Lambeau68-1024x690.jpg')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      padding: isMobileView ? '1rem' : '2rem'
-    }}>
-      <div className="max-w-6xl mx-auto">
-        <Link 
-          href="/"
-          style={{
-            display: 'inline-block',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            color: '#FFD700',
-            padding: '0.5rem 1rem',
-            marginBottom: '1rem',
-            borderRadius: '0.25rem',
-            cursor: 'pointer',
-            textDecoration: 'none',
-            border: 'none'
-          }}
-        >
-          ← Back to Home
-        </Link>
-        
-        <div style={{ border: '2px solid #FFD700', borderRadius: '8px', overflow: 'hidden' }}>
-          <h2 style={{ 
-            color: '#FFD700',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            padding: '0.5rem 1rem',
-            marginBottom: 0,
-            textAlign: 'center',
-            fontSize: '1.5rem',
-            fontWeight: 'bold'
-          }}>
-            Football Highlights Music Songs
+  return (<ResponsiveLayout title="Football Highlights Music Songs">
           </h2>
 
           {/* Search Bar */}
