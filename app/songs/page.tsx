@@ -2,6 +2,11 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { Song, songsData } from '../songsData';
+import { useState, useEffect } from 'react';
+import { Song, songsData } from '../songsData';
+import ResponsiveLayout from '../components/ResponsiveLayout';
+import { useWindowSize, useLoading, ResponsiveRenderer } from '../utils/responsive-utils';
+
 
 // Type for sort configuration
 type SortConfig = {
