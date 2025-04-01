@@ -334,15 +334,7 @@ export default function SongsPage() {
           </h2>
 
           {/* Search Bar */}
-          <div style={{
-            padding: isMobileView ? '0.75rem' : '1rem',
-            backgroundColor: 'rgba(0, 0, 0, 0.3)',
-            display: 'flex',
-            flexDirection: isMobileView ? 'column' : 'row',
-            alignItems: isMobileView ? 'stretch' : 'center',
-            justifyContent: 'space-between',
-            gap: isMobileView ? '0.5rem' : '0'
-          }}>
+          <div className="search-container">
             <div style={{ 
               display: 'flex', 
               alignItems: 'center', 
