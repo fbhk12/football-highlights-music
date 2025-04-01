@@ -1,4 +1,5 @@
 import { Oswald, Bungee_Shade } from 'next/font/google';
+import './globals.css';
 
 const oswald = Oswald({
   subsets: ['latin'],
