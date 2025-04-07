@@ -5,7 +5,6 @@ import { Song, songsData } from '../songsData';
 import ResponsiveLayout from '../components/ResponsiveLayout';
 import { useWindowSize, useLoading, ResponsiveRenderer } from '../utils/responsive-utils';
 
-
 // Type for sort configuration
 type SortConfig = {
   key: keyof Song;
@@ -16,15 +15,10 @@ type SortConfig = {
 const SONGS_PER_PAGE = 20;
 
 export default function SongsPage() {
+  // Use the responsive utility hooks
   const { isMobile } = useWindowSize();
-  const { isLoading, startLoading } = useLoading();
-
-  // State for loading
-  const [isLoading, setIsLoading] = useState(true);
-
-  // State for window width (for responsive design)
-  const [windowWidth, setWindowWidth] = useState(1200); // Default to desktop
-
+  const { isLoading, setIsLoading, startLoading } = useLoading(true);
+  
   // State for search query
   const [searchQuery, setSearchQuery] = useState('');
   
@@ -43,35 +37,9 @@ export default function SongsPage() {
   // State for displayed (paginated) songs
   const [displayedSongs, setDisplayedSongs] = useState<Song[]>([]);
   
-  // Track window size for responsive layout
-  useEffect(() => {
-    // Set initial window width
-    setWindowWidth(window.innerWidth);
-    
-    // Update windowWidth when the window is resized
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    // Simulate loading data
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(timer);
-    };
-  }, []);
-  
   // Calculate total pages
   const totalPages = Math.ceil(filteredSongs.length / SONGS_PER_PAGE);
-
-  // Determine if we're in mobile view
-  const isMobileView = windowWidth < 768;
-
+  
   // Filter songs based on search query
   useEffect(() => {
     setIsLoading(true);
@@ -99,7 +67,7 @@ export default function SongsPage() {
     const timer = setTimeout(filterSongs, 300);
     
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, setIsLoading]);
 
   // Handle sort request
   const requestSort = (key: keyof Song) => {
@@ -330,398 +298,396 @@ export default function SongsPage() {
     </div>
   );
   
-  return (<ResponsiveLayout title="Football Highlights Music Songs">
-          </h2>
-
-          {/* Search Bar */}
-          <div className="search-container">
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
+  return (
+    <ResponsiveLayout title="Football Highlights Music Songs">
+      {/* Search Bar */}
+      <div className="search-container">
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          width: '100%',
+          maxWidth: isMobile ? '100%' : '500px',
+          position: 'relative'
+        }}>
+          <input
+            type="text"
+            placeholder="Search songs, artists, albums..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            style={{
+              padding: '0.5rem 2.5rem 0.5rem 0.75rem',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              color: 'white',
+              border: '1px solid #FFD700',
+              borderRadius: '4px',
               width: '100%',
-              maxWidth: isMobileView ? '100%' : '500px',
-              position: 'relative'
-            }}>
-              <input
-                type="text"
-                placeholder="Search songs, artists, albums..."
-                value={searchQuery}
-                onChange={handleSearchChange}
-                style={{
-                  padding: '0.5rem 2.5rem 0.5rem 0.75rem',
-                  backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                  color: 'white',
-                  border: '1px solid #FFD700',
-                  borderRadius: '4px',
-                  width: '100%',
-                  fontSize: '0.9rem'
-                }}
-              />
-              {searchQuery && (
-                <button
-                  onClick={clearSearch}
-                  style={{
-                    position: 'absolute',
-                    right: '8px',
-                    background: 'none',
-                    border: 'none',
-                    color: '#FFD700',
-                    cursor: 'pointer',
-                    fontSize: '1rem',
-                    padding: '0.25rem'
-                  }}
-                >
-                  ×
-                </button>
-              )}
-            </div>
-            <div style={{ 
-              color: 'white', 
-              marginLeft: isMobileView ? '0' : '1rem',
-              fontSize: isMobileView ? '0.9rem' : '1rem',
-              textAlign: isMobileView ? 'center' : 'left'
-            }}>
-              Showing {Math.min(filteredSongs.length, displayedSongs.length)} of {filteredSongs.length} songs
-            </div>
+              fontSize: '0.9rem'
+            }}
+          />
+          {searchQuery && (
+            <button
+              onClick={clearSearch}
+              style={{
+                position: 'absolute',
+                right: '8px',
+                background: 'none',
+                border: 'none',
+                color: '#FFD700',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                padding: '0.25rem'
+              }}
+            >
+              ×
+            </button>
+          )}
+        </div>
+        <div style={{ 
+          color: 'white', 
+          marginLeft: isMobile ? '0' : '1rem',
+          fontSize: isMobile ? '0.9rem' : '1rem',
+          textAlign: isMobile ? 'center' : 'left',
+          marginTop: '0.5rem'
+        }}>
+          Showing {Math.min(filteredSongs.length, displayedSongs.length)} of {filteredSongs.length} songs
+        </div>
+      </div>
+      
+      {/* Table Container */}
+      <div style={{ padding: isMobile ? '0.5rem' : '0 1rem 1rem' }}>
+        {/* Loading Indicator */}
+        {isLoading && (
+          <div style={{
+            textAlign: 'center',
+            padding: '1rem',
+            color: '#FFD700'
+          }}>
+            Loading...
           </div>
-         </ResponsiveLayout>
-  
-          {/* Table Container */}
-          <div style={{ padding: isMobileView ? '0.5rem' : '0 1rem 1rem' }}>
-            {/* Loading Indicator */}
-            {isLoading && (
+        )}
+        
+        {!isLoading && (
+          <>
+            {/* Desktop View: Column Headers */}
+            {!isMobile && (
               <div style={{
-                textAlign: 'center',
-                padding: '1rem',
-                color: '#FFD700'
+                display: 'flex',
+                alignItems: 'center',
+                padding: '0.5rem 1rem',
+                color: '#FFD700',
+                fontWeight: 'bold',
+                borderBottom: '1px solid #FFD700',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
               }}>
-                Loading...
-              </div>
-            )}
-            
-            {!isLoading && (
-              <>
-                {/* Desktop View: Column Headers */}
-                {!isMobileView && (
-                  <div style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    padding: '0.5rem 1rem',
+                <button 
+                  onClick={() => requestSort('title')}
+                  style={{ 
+                    width: '28%', 
+                    marginRight: '15px',
+                    border: 'none',
+                    background: 'none',
                     color: '#FFD700',
                     fontWeight: 'bold',
-                    borderBottom: '1px solid #FFD700',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
+                  Title <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('title')}</span>
+                </button>
+                <button 
+                  onClick={() => requestSort('artist')}
+                  style={{ 
+                    width: '20%', 
+                    marginRight: '15px',
+                    border: 'none',
+                    background: 'none',
+                    color: '#FFD700',
+                    fontWeight: 'bold',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
+                  Artist <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('artist')}</span>
+                </button>
+                <button 
+                  onClick={() => requestSort('album')}
+                  style={{ 
+                    width: '20%', 
+                    marginRight: '15px',
+                    border: 'none',
+                    background: 'none',
+                    color: '#FFD700',
+                    fontWeight: 'bold',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
+                  Album <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('album')}</span>
+                </button>
+                <button 
+                  onClick={() => requestSort('label')}
+                  style={{ 
+                    width: '20%', 
+                    marginRight: '15px',
+                    border: 'none',
+                    background: 'none',
+                    color: '#FFD700',
+                    fontWeight: 'bold',
+                    textAlign: 'left',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center'
+                  }}
+                >
+                  Label <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('label')}</span>
+                </button>
+                <button 
+                  onClick={() => requestSort('year')}
+                  style={{ 
+                    width: '12%',
+                    border: 'none',
+                    background: 'none',
+                    color: '#FFD700',
+                    fontWeight: 'bold',
+                    textAlign: 'center',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  Year <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('year')}</span>
+                </button>
+              </div>
+            )}
+
+            {/* Mobile View: Sort Options */}
+            {isMobile && (
+              <div style={{
+                padding: '0.5rem',
+                color: '#FFD700',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                borderBottom: '1px solid rgba(255, 215, 0, 0.3)',
+                marginBottom: '0.5rem'
+              }}>
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  marginBottom: '0.25rem'
+                }}>
+                  <span>Sort by:</span>
+                  <div style={{
+                    display: 'flex',
+                    gap: '0.5rem'
                   }}>
                     <button 
                       onClick={() => requestSort('title')}
                       style={{ 
-                        width: '28%', 
-                        marginRight: '15px',
                         border: 'none',
-                        background: 'none',
+                        backgroundColor: sortConfig.key === 'title' ? 'rgba(255, 215, 0, 0.2)' : 'transparent',
                         color: '#FFD700',
-                        fontWeight: 'bold',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center'
+                        padding: '0.25rem 0.5rem',
+                        borderRadius: '4px',
+                        fontWeight: sortConfig.key === 'title' ? 'bold' : 'normal',
+                        fontSize: '0.8rem'
                       }}
                     >
-                      Title <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('title')}</span>
+                      Title {sortConfig.key === 'title' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
                     </button>
                     <button 
                       onClick={() => requestSort('artist')}
                       style={{ 
-                        width: '20%', 
-                        marginRight: '15px',
                         border: 'none',
-                        background: 'none',
+                        backgroundColor: sortConfig.key === 'artist' ? 'rgba(255, 215, 0, 0.2)' : 'transparent',
                         color: '#FFD700',
-                        fontWeight: 'bold',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center'
+                        padding: '0.25rem 0.5rem',
+                        borderRadius: '4px',
+                        fontWeight: sortConfig.key === 'artist' ? 'bold' : 'normal',
+                        fontSize: '0.8rem'
                       }}
                     >
-                      Artist <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('artist')}</span>
-                    </button>
-                    <button 
-                      onClick={() => requestSort('album')}
-                      style={{ 
-                        width: '20%', 
-                        marginRight: '15px',
-                        border: 'none',
-                        background: 'none',
-                        color: '#FFD700',
-                        fontWeight: 'bold',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
-                    >
-                      Album <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('album')}</span>
-                    </button>
-                    <button 
-                      onClick={() => requestSort('label')}
-                      style={{ 
-                        width: '20%', 
-                        marginRight: '15px',
-                        border: 'none',
-                        background: 'none',
-                        color: '#FFD700',
-                        fontWeight: 'bold',
-                        textAlign: 'left',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center'
-                      }}
-                    >
-                      Label <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('label')}</span>
+                      Artist {sortConfig.key === 'artist' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
                     </button>
                     <button 
                       onClick={() => requestSort('year')}
                       style={{ 
-                        width: '12%',
                         border: 'none',
-                        background: 'none',
+                        backgroundColor: sortConfig.key === 'year' ? 'rgba(255, 215, 0, 0.2)' : 'transparent',
                         color: '#FFD700',
-                        fontWeight: 'bold',
-                        textAlign: 'center',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
+                        padding: '0.25rem 0.5rem',
+                        borderRadius: '4px',
+                        fontWeight: sortConfig.key === 'year' ? 'bold' : 'normal',
+                        fontSize: '0.8rem'
                       }}
                     >
-                      Year <span style={{ marginLeft: '5px' }}>{getSortDirectionIcon('year')}</span>
+                      Year {sortConfig.key === 'year' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
                     </button>
                   </div>
-                )}
+                </div>
+              </div>
+            )}
 
-                {/* Mobile View: Sort Options */}
-                {isMobileView && (
-                  <div style={{
-                    padding: '0.5rem',
-                    color: '#FFD700',
+            {/* Songs List */}
+            <div>
+              {displayedSongs.length > 0 ? (
+                isMobile ? (
+                  // Mobile view: Card layout
+                  displayedSongs.map((song, index) => renderMobileSongCard(song, index))
+                ) : (
+                  // Desktop view: Table layout
+                  displayedSongs.map((song, index) => renderDesktopSongRow(song, index))
+                )
+              ) : (
+                <div 
+                  style={{
                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    borderBottom: '1px solid rgba(255, 215, 0, 0.3)',
-                    marginBottom: '0.5rem'
-                  }}>
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      marginBottom: '0.25rem'
-                    }}>
-                      <span>Sort by:</span>
-                      <div style={{
-                        display: 'flex',
-                        gap: '0.5rem'
-                      }}>
-                        <button 
-                          onClick={() => requestSort('title')}
-                          style={{ 
-                            border: 'none',
-                            backgroundColor: sortConfig.key === 'title' ? 'rgba(255, 215, 0, 0.2)' : 'transparent',
-                            color: '#FFD700',
-                            padding: '0.25rem 0.5rem',
-                            borderRadius: '4px',
-                            fontWeight: sortConfig.key === 'title' ? 'bold' : 'normal',
-                            fontSize: '0.8rem'
-                          }}
-                        >
-                          Title {sortConfig.key === 'title' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                        </button>
-                        <button 
-                          onClick={() => requestSort('artist')}
-                          style={{ 
-                            border: 'none',
-                            backgroundColor: sortConfig.key === 'artist' ? 'rgba(255, 215, 0, 0.2)' : 'transparent',
-                            color: '#FFD700',
-                            padding: '0.25rem 0.5rem',
-                            borderRadius: '4px',
-                            fontWeight: sortConfig.key === 'artist' ? 'bold' : 'normal',
-                            fontSize: '0.8rem'
-                          }}
-                        >
-                          Artist {sortConfig.key === 'artist' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                        </button>
-                        <button 
-                          onClick={() => requestSort('year')}
-                          style={{ 
-                            border: 'none',
-                            backgroundColor: sortConfig.key === 'year' ? 'rgba(255, 215, 0, 0.2)' : 'transparent',
-                            color: '#FFD700',
-                            padding: '0.25rem 0.5rem',
-                            borderRadius: '4px',
-                            fontWeight: sortConfig.key === 'year' ? 'bold' : 'normal',
-                            fontSize: '0.8rem'
-                          }}
-                        >
-                          Year {sortConfig.key === 'year' && (sortConfig.direction === 'ascending' ? '↑' : '↓')}
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                    padding: '2rem 1rem',
+                    textAlign: 'center',
+                    color: 'white'
+                  }}
+                >
+                  {searchQuery ? `No songs found matching "${searchQuery}"` : "No songs found to display"}
+                </div>
+              )}
+            </div>
 
-                {/* Songs List */}
-                <div>
-                  {displayedSongs.length > 0 ? (
-                    isMobileView ? (
-                      // Mobile view: Card layout
-                      displayedSongs.map((song, index) => renderMobileSongCard(song, index))
-                    ) : (
-                      // Desktop view: Table layout
-                      displayedSongs.map((song, index) => renderDesktopSongRow(song, index))
-                    )
-                  ) : (
-                    <div 
+            {/* Pagination */}
+            {totalPages > 0 && (
+              <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                padding: isMobile ? '0.75rem 0.5rem' : '1rem',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                flexWrap: 'wrap',
+                gap: '0.25rem',
+                marginTop: '1rem'
+              }}>
+                {totalPages <= (isMobile ? 5 : 10) ? (
+                  // If fewer than 5/10 pages, show all page numbers
+                  Array.from({ length: totalPages }, (_, i) => (
+                    <button
+                      key={i + 1}
+                      onClick={() => paginate(i + 1)}
                       style={{
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        padding: '2rem 1rem',
-                        textAlign: 'center',
-                        color: 'white'
+                        margin: '0 0.25rem',
+                        padding: isMobile ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
+                        backgroundColor: currentPage === i + 1 ? '#FFD700' : 'rgba(0, 0, 0, 0.5)',
+                        color: currentPage === i + 1 ? 'black' : '#FFD700',
+                        border: '1px solid #FFD700',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: isMobile ? '0.9rem' : '1rem'
                       }}
                     >
-                      {searchQuery ? `No songs found matching "${searchQuery}"` : "No songs found to display"}
-                    </div>
-                  )}
-                </div>
+                      {i + 1}
+                    </button>
+                  ))
+                ) : (
+                  // If more than 5/10 pages, show a more compact pagination
+                  <>
+                    {/* First page */}
+                    <button
+                      onClick={() => paginate(1)}
+                      style={{
+                        margin: '0 0.25rem',
+                        padding: isMobile ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
+                        backgroundColor: currentPage === 1 ? '#FFD700' : 'rgba(0, 0, 0, 0.5)',
+                        color: currentPage === 1 ? 'black' : '#FFD700',
+                        border: '1px solid #FFD700',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: isMobile ? '0.9rem' : '1rem'
+                      }}
+                    >
+                      1
+                    </button>
 
-                {/* Pagination */}
-                {totalPages > 0 && (
-                  <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    padding: isMobileView ? '0.75rem 0.5rem' : '1rem',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    flexWrap: 'wrap',
-                    gap: '0.25rem'
-                  }}>
-                    {totalPages <= (isMobileView ? 5 : 10) ? (
-                      // If fewer than 5/10 pages, show all page numbers
-                      Array.from({ length: totalPages }, (_, i) => (
-                        <button
-                          key={i + 1}
-                          onClick={() => paginate(i + 1)}
-                          style={{
-                            margin: '0 0.25rem',
-                            padding: isMobileView ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
-                            backgroundColor: currentPage === i + 1 ? '#FFD700' : 'rgba(0, 0, 0, 0.5)',
-                            color: currentPage === i + 1 ? 'black' : '#FFD700',
-                            border: '1px solid #FFD700',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            fontSize: isMobileView ? '0.9rem' : '1rem'
-                          }}
-                        >
-                          {i + 1}
-                        </button>
-                      ))
-                    ) : (
-                      // If more than 5/10 pages, show a more compact pagination
-                      <>
-                        {/* First page */}
-                        <button
-                          onClick={() => paginate(1)}
-                          style={{
-                            margin: '0 0.25rem',
-                            padding: isMobileView ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
-                            backgroundColor: currentPage === 1 ? '#FFD700' : 'rgba(0, 0, 0, 0.5)',
-                            color: currentPage === 1 ? 'black' : '#FFD700',
-                            border: '1px solid #FFD700',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            fontSize: isMobileView ? '0.9rem' : '1rem'
-                          }}
-                        >
-                          1
-                        </button>
-
-                        {/* Previous button */}
-                        {currentPage > 2 && (
-                          <button
-                            onClick={() => paginate(currentPage - 1)}
-                            style={{
-                              margin: '0 0.25rem',
-                              padding: isMobileView ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
-                              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                              color: '#FFD700',
-                              border: '1px solid #FFD700',
-                              borderRadius: '4px',
-                              cursor: 'pointer',
-                              fontSize: isMobileView ? '0.9rem' : '1rem'
-                            }}
-                          >
-                            &lt;
-                          </button>
-                        )}
-
-                        {/* Current page (if not first or last) */}
-                        {currentPage !== 1 && currentPage !== totalPages && (
-                          <button
-                            style={{
-                              margin: '0 0.25rem',
-                              padding: isMobileView ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
-                              backgroundColor: '#FFD700',
-                              color: 'black',
-                              border: '1px solid #FFD700',
-                              borderRadius: '4px',
-                              cursor: 'pointer',
-                              fontSize: isMobileView ? '0.9rem' : '1rem'
-                            }}
-                          >
-                            {currentPage}
-                          </button>
-                        )}
-
-                        {/* Next button */}
-                        {currentPage < totalPages - 1 && (
-                          <button
-                            onClick={() => paginate(currentPage + 1)}
-                            style={{
-                              margin: '0 0.25rem',
-                              padding: isMobileView ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
-                              backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                              color: '#FFD700',
-                              border: '1px solid #FFD700',
-                              borderRadius: '4px',
-                              cursor: 'pointer',
-                              fontSize: isMobileView ? '0.9rem' : '1rem'
-                            }}
-                          >
-                            &gt;
-                          </button>
-                        )}
-
-                        {/* Last page */}
-                        <button
-                          onClick={() => paginate(totalPages)}
-                          style={{
-                            margin: '0 0.25rem',
-                            padding: isMobileView ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
-                            backgroundColor: currentPage === totalPages ? '#FFD700' : 'rgba(0, 0, 0, 0.5)',
-                            color: currentPage === totalPages ? 'black' : '#FFD700',
-                            border: '1px solid #FFD700',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            fontSize: isMobileView ? '0.9rem' : '1rem'
-                          }}
-                        >
-                          {totalPages}
-                        </button>
-                      </>
+                    {/* Previous button */}
+                    {currentPage > 2 && (
+                      <button
+                        onClick={() => paginate(currentPage - 1)}
+                        style={{
+                          margin: '0 0.25rem',
+                          padding: isMobile ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
+                          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                          color: '#FFD700',
+                          border: '1px solid #FFD700',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: isMobile ? '0.9rem' : '1rem'
+                        }}
+                      >
+                        &lt;
+                      </button>
                     )}
-                  </div>
+
+                    {/* Current page (if not first or last) */}
+                    {currentPage !== 1 && currentPage !== totalPages && (
+                      <button
+                        style={{
+                          margin: '0 0.25rem',
+                          padding: isMobile ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
+                          backgroundColor: '#FFD700',
+                          color: 'black',
+                          border: '1px solid #FFD700',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: isMobile ? '0.9rem' : '1rem'
+                        }}
+                      >
+                        {currentPage}
+                      </button>
+                    )}
+
+                    {/* Next button */}
+                    {currentPage < totalPages - 1 && (
+                      <button
+                        onClick={() => paginate(currentPage + 1)}
+                        style={{
+                          margin: '0 0.25rem',
+                          padding: isMobile ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
+                          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                          color: '#FFD700',
+                          border: '1px solid #FFD700',
+                          borderRadius: '4px',
+                          cursor: 'pointer',
+                          fontSize: isMobile ? '0.9rem' : '1rem'
+                        }}
+                      >
+                        &gt;
+                      </button>
+                    )}
+
+                    {/* Last page */}
+                    <button
+                      onClick={() => paginate(totalPages)}
+                      style={{
+                        margin: '0 0.25rem',
+                        padding: isMobile ? '0.4rem 0.6rem' : '0.5rem 0.75rem',
+                        backgroundColor: currentPage === totalPages ? '#FFD700' : 'rgba(0, 0, 0, 0.5)',
+                        color: currentPage === totalPages ? 'black' : '#FFD700',
+                        border: '1px solid #FFD700',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        fontSize: isMobile ? '0.9rem' : '1rem'
+                      }}
+                    >
+                      {totalPages}
+                    </button>
+                  </>
                 )}
-              </>
+              </div>
             )}
-          </div>
-        </div>
+          </>
+        )}
       </div>
-    </main>
+    </ResponsiveLayout>
   );
 }
