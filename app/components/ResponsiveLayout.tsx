@@ -1,6 +1,8 @@
+// app/components/ResponsiveLayout.tsx
 'use client';
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import Link from 'next/link';
+import { useWindowSize, useLoading } from '../utils/responsive-utils';
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,36 +18,12 @@ export default function ResponsiveLayout({
   backText = 'Back to Home'
 }: LayoutProps) {
   // State for tracking window width
-  const [windowWidth, setWindowWidth] = useState(1200);
-  const [isLoading, setIsLoading] = useState(true);
-  
-  // Track window size for responsive layout
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-    
-    // Set initial window width
-    setWindowWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    
-    // Simulate initial loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 300);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      clearTimeout(timer);
-    };
-  }, []);
-  
-  // Determine if we're in mobile view
-  const isMobileView = windowWidth < 768;
+  const { isMobile } = useWindowSize();
+  const { isLoading } = useLoading(true, 300);
   
   return (
     <main className="bg-football">
-      <div className={`container ${isMobileView ? 'mobile' : ''}`}>
+      <div className={`container ${isMobile ? 'mobile' : ''}`}>
         {/* Back button */}
         <Link 
           href={backLink}
