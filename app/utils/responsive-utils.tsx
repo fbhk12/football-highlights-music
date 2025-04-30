@@ -85,4 +85,3 @@ export function LoadingSpinner() {
     </div>
   );
 }
-"Fix: Replace responsive-utils.ts with .tsx version"
