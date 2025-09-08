@@ -445,6 +445,15 @@ export default function HomePage() {
             </div>
           </div>
 
+          <div style={{ position: 'relative', width: '300px', height: '200px' }}>
+  <Image 
+    src="/Lambeau68-1024x690.jpg"
+    alt="Stadium"
+    fill
+    style={{ objectFit: 'cover' }}
+  />
+  <p>Test image</p>
+</div>
           {/* Footer */}
           <footer style={{
             textAlign: 'center',
