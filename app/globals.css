@@ -53,7 +53,7 @@ body {
 
 /* Background patterns */
 .bg-football {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
               url('/Lambeau68-1024x690.jpg');
   background-size: cover;
   background-position: center;
